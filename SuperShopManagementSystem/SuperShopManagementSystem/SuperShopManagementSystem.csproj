@@ -1,0 +1,1382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04702A97-2A14-4625-B0E8-4FE3B1C41472}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperShopManagementSystem</RootNamespace>
+    <AssemblyName>SuperShopManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Theme\assemblefile.js" />
+    <Content Include="Theme\dist\app.js" />
+    <Content Include="Theme\dist\app.min.js" />
+    <Content Include="Theme\dist\core.js" />
+    <Content Include="Theme\dist\core.min.js" />
+    <Content Include="Theme\dist\main.css" />
+    <Content Include="Theme\dist\main.min.css" />
+    <Content Include="Theme\dist\main.rtl.css" />
+    <Content Include="Theme\dist\main.rtl.min.css" />
+    <Content Include="Theme\dist\theme.css" />
+    <Content Include="Theme\dist\theme.min.css" />
+    <Content Include="Theme\Gruntfile.js" />
+    <Content Include="Theme\gulpfile.babel.js" />
+    <Content Include="Theme\public\403.html" />
+    <Content Include="Theme\public\404.html" />
+    <Content Include="Theme\public\405.html" />
+    <Content Include="Theme\public\500.html" />
+    <Content Include="Theme\public\503.html" />
+    <Content Include="Theme\public\alterne.html" />
+    <Content Include="Theme\public\assets\css\countdown.css" />
+    <Content Include="Theme\public\assets\css\main.css" />
+    <Content Include="Theme\public\assets\css\main.min.css" />
+    <Content Include="Theme\public\assets\css\main.rtl.css" />
+    <Content Include="Theme\public\assets\css\main.rtl.min.css" />
+    <Content Include="Theme\public\assets\css\style-switcher.css" />
+    <Content Include="Theme\public\assets\css\style-switcher.min.css" />
+    <Content Include="Theme\public\assets\css\theme.css" />
+    <Content Include="Theme\public\assets\css\theme.min.css" />
+    <Content Include="Theme\public\assets\img\cp.png" />
+    <Content Include="Theme\public\assets\img\logo.png" />
+    <Content Include="Theme\public\assets\img\metis-tile.png" />
+    <Content Include="Theme\public\assets\img\pattern\always_grey.png" />
+    <Content Include="Theme\public\assets\img\pattern\arches.png" />
+    <Content Include="Theme\public\assets\img\pattern\batthern.png" />
+    <Content Include="Theme\public\assets\img\pattern\bo_play_pattern.png" />
+    <Content Include="Theme\public\assets\img\pattern\brillant.png" />
+    <Content Include="Theme\public\assets\img\pattern\carbon_fibre.png" />
+    <Content Include="Theme\public\assets\img\pattern\cartographer.png" />
+    <Content Include="Theme\public\assets\img\pattern\crissXcross.png" />
+    <Content Include="Theme\public\assets\img\pattern\diagonal_striped_brick.png" />
+    <Content Include="Theme\public\assets\img\pattern\diamond_upholstery.png" />
+    <Content Include="Theme\public\assets\img\pattern\egg_shell.png" />
+    <Content Include="Theme\public\assets\img\pattern\gplaypattern.png" />
+    <Content Include="Theme\public\assets\img\pattern\greyfloral.png" />
+    <Content Include="Theme\public\assets\img\pattern\irongrip.png" />
+    <Content Include="Theme\public\assets\img\pattern\large_leather.png" />
+    <Content Include="Theme\public\assets\img\pattern\low_contrast_linen.png" />
+    <Content Include="Theme\public\assets\img\pattern\noisy_grid.png" />
+    <Content Include="Theme\public\assets\img\pattern\pool_table.png" />
+    <Content Include="Theme\public\assets\img\pattern\purty_wood.png" />
+    <Content Include="Theme\public\assets\img\pattern\random_grey_variations.png" />
+    <Content Include="Theme\public\assets\img\pattern\retina_wood.png" />
+    <Content Include="Theme\public\assets\img\pattern\rip_jobs.png" />
+    <Content Include="Theme\public\assets\img\pattern\white_tiles.png" />
+    <Content Include="Theme\public\assets\img\pattern\wood_1.png" />
+    <Content Include="Theme\public\assets\img\user.gif" />
+    <Content Include="Theme\public\assets\js\app.js" />
+    <Content Include="Theme\public\assets\js\app.min.js" />
+    <Content Include="Theme\public\assets\js\core.js" />
+    <Content Include="Theme\public\assets\js\core.min.js" />
+    <Content Include="Theme\public\assets\js\countdown.js" />
+    <Content Include="Theme\public\assets\js\style-switcher.js" />
+    <Content Include="Theme\public\assets\lib\animate.css\animate.css" />
+    <Content Include="Theme\public\assets\lib\animate.css\animate.min.css" />
+    <Content Include="Theme\public\assets\lib\bootstrap-daterangepicker\daterangepicker-bs2.css" />
+    <Content Include="Theme\public\assets\lib\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Theme\public\assets\lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Theme\public\assets\lib\bootstrap-daterangepicker\examples.html" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Theme\public\assets\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Theme\public\assets\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Theme\public\assets\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Theme\public\assets\lib\bootstrap\js\npm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ac.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ad.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ae.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.af.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ag.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ai.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.al.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.am.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ao.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ar.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.as.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.at.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.au.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.aw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ax.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.az.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ba.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bb.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bd.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.be.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bf.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bh.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bi.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bj.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bl.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bn.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bo.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bq.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.br.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bs.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bt.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.by.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.bz.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ca.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cc.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cd.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cf.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ch.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ci.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ck.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cl.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cn.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.co.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cu.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cv.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cx.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cy.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.cz.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.de.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.dj.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.dk.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.dm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.do.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.dz.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ec.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ee.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.eg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.eh.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.er.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.es.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.et.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.fi.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.fj.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.fk.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.fm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.fo.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.fr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ga.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gb.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gd.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ge.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gf.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gh.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gi.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gl.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gn.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gp.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gq.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gt.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gu.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.gy.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.hk.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.hn.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.hr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ht.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.hu.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.i18n.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.id.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ie.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.il.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.im.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.in.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.io.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.iq.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ir.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.is.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.it.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.je.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.jm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.jo.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.jp.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ke.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.kg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.kh.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ki.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.km.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.kn.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.kp.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.kr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.kw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ky.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.kz.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.la.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.lb.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.lc.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.li.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.lk.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.lr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ls.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.lt.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.lu.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.lv.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ly.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ma.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mc.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.md.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.me.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mf.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mh.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mk.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ml.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mn.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mo.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mp.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mq.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ms.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mt.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mu.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mv.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mx.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.my.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.mz.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.na.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.nc.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ne.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.nf.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ng.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ni.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.nl.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.no.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.np.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.nr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.nu.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.nz.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.om.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pa.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pe.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pf.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ph.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pk.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pl.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ps.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pt.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.pw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.py.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.qa.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.re.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ro.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.rs.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ru.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.rw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sa.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sb.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sc.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sd.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.se.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sh.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.si.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sj.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sk.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sl.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sn.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.so.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ss.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.st.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sv.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sx.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sy.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.sz.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ta.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tc.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.td.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.th.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tj.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tk.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tl.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tn.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.to.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tr.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tt.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tv.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.tz.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ua.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ug.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.us.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.uy.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.uz.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.va.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.vc.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ve.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.vg.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.vi.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.vn.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.vu.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.wf.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ws.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.ye.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.yt.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.za.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.zm.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\addons\cleave-phone.zw.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\cleave-angular.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\cleave-angular.min.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\cleave-react.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\cleave-react.min.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\cleave.js" />
+    <Content Include="Theme\public\assets\lib\cleave.js\cleave.min.js" />
+    <Content Include="Theme\public\assets\lib\clipboard\clipboard.js" />
+    <Content Include="Theme\public\assets\lib\clipboard\clipboard.min.js" />
+    <Content Include="Theme\public\assets\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="Theme\public\assets\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Theme\public\assets\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Theme\public\assets\lib\formwizard\changelog.txt" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\jquery.ui.all.css" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\jquery.ui.base.css" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\jquery.ui.core.css" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\base\jquery.ui.theme.css" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\css\ui-lightness\jquery-ui-1.8.2.custom.css" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_10_custom_validation_initialization.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_11_changing_options_after_initialization.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_12_using_remoteAjax_for_all_steps.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_13_nested_routes.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_14_using_fieldset_as_step_identifier.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_15_add_and_remove_steps_dynamically.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_16_have_the_wizard_ignore_specific_inputs_during_transition.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_17_cancel_the_submit_in_using_beforeSubmit_beforeSend_and_beforeSerialize_callbacks.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_18_disable_jquery_ui_styles_using_disableUIStyles.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_19_summary_page.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_1_straight.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_20_submit_form_without_ajax.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_21_add_steps_using_update_steps_method.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_22_before_step_shown_event.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_2_branch.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_3_bbq_integration_history_handling.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_4_step_shown_event.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_5_methods.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_6_remoteAjax_and_events.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_7_transition_animation.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_8_multiple_wizards.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\example_9_branching_using_checkbox_radiobutton_hidden_.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\json.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\normal_submit.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\store_in_database.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\examples\validate.html" />
+    <Content Include="Theme\public\assets\lib\formwizard\js\bbq.js" />
+    <Content Include="Theme\public\assets\lib\formwizard\js\jquery-1.4.2.min.js" />
+    <Content Include="Theme\public\assets\lib\formwizard\js\jquery-ui-1.8.5.custom.min.js" />
+    <Content Include="Theme\public\assets\lib\formwizard\js\jquery.form.js" />
+    <Content Include="Theme\public\assets\lib\formwizard\js\jquery.form.wizard.js" />
+    <Content Include="Theme\public\assets\lib\formwizard\js\jquery.validate.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\fullcalendar.css" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\fullcalendar.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\fullcalendar.print.min.css" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\gcal.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\gcal.min.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale-all.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\af.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ar-dz.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ar-ly.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ar-ma.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ar-sa.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ar-tn.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ar.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\bg.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ca.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\cs.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\da.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\de-at.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\de.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\el.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\en-au.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\en-ca.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\en-gb.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\en-ie.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\en-nz.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\es-do.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\es.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\eu.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\fa.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\fi.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\fr-ca.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\fr-ch.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\fr.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\gl.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\he.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\hi.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\hr.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\hu.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\id.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\is.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\it.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ja.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\kk.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ko.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\lb.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\lt.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\lv.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\mk.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ms-my.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ms.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\nb.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\nl-be.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\nl.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\nn.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\pl.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\pt-br.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\pt.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ro.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\ru.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\sk.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\sl.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\sr-cyrl.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\sr.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\sv.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\th.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\tr.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\uk.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\vi.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\zh-cn.js" />
+    <Content Include="Theme\public\assets\lib\fullcalendar\locale\zh-tw.js" />
+    <Content Include="Theme\public\assets\lib\gmaps\gmaps.js" />
+    <Content Include="Theme\public\assets\lib\gmaps\gmaps.min.js" />
+    <Content Include="Theme\public\assets\lib\inputlimiter\jquery.inputlimiter.css" />
+    <Content Include="Theme\public\assets\lib\inputlimiter\jquery.inputlimiter.js" />
+    <Content Include="Theme\public\assets\lib\jquery-validation\additional-methods.js" />
+    <Content Include="Theme\public\assets\lib\jquery-validation\jquery.validate.js" />
+    <Content Include="Theme\public\assets\lib\jquery-validation\jquery.validate.min.js" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\css\jquery.gritter.css" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\images\gritter-light.png" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\images\gritter-long.png" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\images\gritter.png" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\images\ie-spacer.gif" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\images\trees.jpg" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\index.html" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\js\jquery.gritter.js" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\js\jquery.gritter.min.js" />
+    <Content Include="Theme\public\assets\lib\jquery\jquery.js" />
+    <Content Include="Theme\public\assets\lib\jquery\jquery.min.js" />
+    <Content Include="Theme\public\assets\lib\metismenu\metisMenu.css" />
+    <Content Include="Theme\public\assets\lib\metismenu\metisMenu.js" />
+    <Content Include="Theme\public\assets\lib\metismenu\metisMenu.min.css" />
+    <Content Include="Theme\public\assets\lib\metismenu\metisMenu.min.js" />
+    <Content Include="Theme\public\assets\lib\moment\locales.js" />
+    <Content Include="Theme\public\assets\lib\moment\locales.min.js" />
+    <Content Include="Theme\public\assets\lib\moment\moment-with-locales.js" />
+    <Content Include="Theme\public\assets\lib\moment\moment-with-locales.min.js" />
+    <Content Include="Theme\public\assets\lib\moment\moment.min.js" />
+    <Content Include="Theme\public\assets\lib\noty\jquery.noty.packaged.js" />
+    <Content Include="Theme\public\assets\lib\noty\jquery.noty.packaged.min.js" />
+    <Content Include="Theme\public\assets\lib\onoffcanvas\onoffcanvas.css" />
+    <Content Include="Theme\public\assets\lib\onoffcanvas\onoffcanvas.js" />
+    <Content Include="Theme\public\assets\lib\onoffcanvas\onoffcanvas.min.css" />
+    <Content Include="Theme\public\assets\lib\onoffcanvas\onoffcanvas.min.js" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\css\jquery.pagedown-bootstrap.css" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\demo\index.html" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\js\jquery.pagedown-bootstrap.combined.js" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\js\jquery.pagedown-bootstrap.combined.min.js" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\js\jquery.pagedown-bootstrap.js" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\js\Markdown.Converter.js" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\js\Markdown.Editor.js" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\js\Markdown.Sanitizer.js" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\LICENSE.txt" />
+    <Content Include="Theme\public\assets\lib\plupload\examples\custom.html" />
+    <Content Include="Theme\public\assets\lib\plupload\examples\dump.php" />
+    <Content Include="Theme\public\assets\lib\plupload\examples\events.html" />
+    <Content Include="Theme\public\assets\lib\plupload\examples\jquery\all_runtimes.html" />
+    <Content Include="Theme\public\assets\lib\plupload\examples\jquery\jquery_ui_widget.html" />
+    <Content Include="Theme\public\assets\lib\plupload\examples\jquery\queue_widget.html" />
+    <Content Include="Theme\public\assets\lib\plupload\examples\jquery\s3.php" />
+    <Content Include="Theme\public\assets\lib\plupload\examples\upload.php" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\ar.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\az.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\bs.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\cs.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\cy.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\da.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\de.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\el.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\en.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\es.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\et.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\fa.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\fi.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\fr.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\he.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\hr.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\hu.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\hy.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\id.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\it.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\ja.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\ka.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\kk.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\km.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\ko.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\lt.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\lv.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\mn.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\ms.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\nl.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\pl.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\pt_BR.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\ro.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\ru.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\sk.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\sq.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\sr.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\sr_RS.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\sv.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\th_TH.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\tr.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\uk_UA.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\zh_CN.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\i18n\zh_TW.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\img\done.gif" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\img\error.gif" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.ui.plupload\img\loading.gif" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.min.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\moxie.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\moxie.min.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\Moxie.swf" />
+    <Content Include="Theme\public\assets\lib\plupload\js\plupload.dev.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\plupload.full.min.js" />
+    <Content Include="Theme\public\assets\lib\plupload\js\plupload.min.js" />
+    <Content Include="Theme\public\assets\lib\plupload\license.txt" />
+    <Content Include="Theme\public\assets\lib\screenfull\screenfull.js" />
+    <Content Include="Theme\public\assets\lib\timepicker\css\bootstrap-responsive.css" />
+    <Content Include="Theme\public\assets\lib\timepicker\css\bootstrap-timepicker.css" />
+    <Content Include="Theme\public\assets\lib\timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="Theme\public\assets\lib\timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Theme\public\assets\lib\timepicker\js\bootstrap-timepicker.min.js" />
+    <Content Include="Theme\public\assets\lib\validVal\index.html" />
+    <Content Include="Theme\public\assets\lib\validVal\js\jquery.validVal-customValidations.js" />
+    <Content Include="Theme\public\assets\lib\validVal\js\jquery.validVal-debugger.js" />
+    <Content Include="Theme\public\assets\lib\validVal\js\jquery.validVal.js" />
+    <Content Include="Theme\public\assets\lib\validVal\js\jquery.validVal.min.js" />
+    <Content Include="Theme\public\assets\lib\validVal\serverside-validations\index.html" />
+    <Content Include="Theme\public\assets\lib\validVal\serverside-validations\validations.php" />
+    <Content Include="Theme\public\bgcolor.html" />
+    <Content Include="Theme\public\bgimage.html" />
+    <Content Include="Theme\public\blank.html" />
+    <Content Include="Theme\public\boxed.html" />
+    <Content Include="Theme\public\button.html" />
+    <Content Include="Theme\public\calendar.html" />
+    <Content Include="Theme\public\chart.html" />
+    <Content Include="Theme\public\countdown.html" />
+    <Content Include="Theme\public\dashboard.html" />
+    <Content Include="Theme\public\fixed-header-boxed.html" />
+    <Content Include="Theme\public\fixed-header-fixed-mini-sidebar.html" />
+    <Content Include="Theme\public\fixed-header-menu.html" />
+    <Content Include="Theme\public\fixed-header-mini-sidebar.html" />
+    <Content Include="Theme\public\fixed-header.html" />
+    <Content Include="Theme\public\fixed-menu-boxed.html" />
+    <Content Include="Theme\public\fixed-menu.html" />
+    <Content Include="Theme\public\fixed-mini-sidebar.html" />
+    <Content Include="Theme\public\form-general.html" />
+    <Content Include="Theme\public\form-validation.html" />
+    <Content Include="Theme\public\form-wizard.html" />
+    <Content Include="Theme\public\form-wysiwyg.html" />
+    <Content Include="Theme\public\fxhmoxed.html" />
+    <Content Include="Theme\public\grid.html" />
+    <Content Include="Theme\public\icon.html" />
+    <Content Include="Theme\public\index.html" />
+    <Content Include="Theme\public\login.html" />
+    <Content Include="Theme\public\maps.html" />
+    <Content Include="Theme\public\no-header-sidebar.html" />
+    <Content Include="Theme\public\no-header.html" />
+    <Content Include="Theme\public\no-left-right-sidebar.html" />
+    <Content Include="Theme\public\no-left-sidebar-main-search.html" />
+    <Content Include="Theme\public\no-left-sidebar.html" />
+    <Content Include="Theme\public\no-main-search.html" />
+    <Content Include="Theme\public\no-right-sidebar.html" />
+    <Content Include="Theme\public\offline.html" />
+    <Content Include="Theme\public\panel.html" />
+    <Content Include="Theme\public\pricing.html" />
+    <Content Include="Theme\public\progress.html" />
+    <Content Include="Theme\public\rtl\403.html" />
+    <Content Include="Theme\public\rtl\404.html" />
+    <Content Include="Theme\public\rtl\405.html" />
+    <Content Include="Theme\public\rtl\500.html" />
+    <Content Include="Theme\public\rtl\503.html" />
+    <Content Include="Theme\public\rtl\alterne.html" />
+    <Content Include="Theme\public\rtl\bgcolor.html" />
+    <Content Include="Theme\public\rtl\bgimage.html" />
+    <Content Include="Theme\public\rtl\blank.html" />
+    <Content Include="Theme\public\rtl\boxed.html" />
+    <Content Include="Theme\public\rtl\button.html" />
+    <Content Include="Theme\public\rtl\calendar.html" />
+    <Content Include="Theme\public\rtl\chart.html" />
+    <Content Include="Theme\public\rtl\countdown.html" />
+    <Content Include="Theme\public\rtl\dashboard.html" />
+    <Content Include="Theme\public\rtl\fixed-header-boxed.html" />
+    <Content Include="Theme\public\rtl\fixed-header-fixed-mini-sidebar.html" />
+    <Content Include="Theme\public\rtl\fixed-header-menu.html" />
+    <Content Include="Theme\public\rtl\fixed-header-mini-sidebar.html" />
+    <Content Include="Theme\public\rtl\fixed-header.html" />
+    <Content Include="Theme\public\rtl\fixed-menu-boxed.html" />
+    <Content Include="Theme\public\rtl\fixed-menu.html" />
+    <Content Include="Theme\public\rtl\fixed-mini-sidebar.html" />
+    <Content Include="Theme\public\rtl\form-general.html" />
+    <Content Include="Theme\public\rtl\form-validation.html" />
+    <Content Include="Theme\public\rtl\form-wizard.html" />
+    <Content Include="Theme\public\rtl\form-wysiwyg.html" />
+    <Content Include="Theme\public\rtl\fxhmoxed.html" />
+    <Content Include="Theme\public\rtl\grid.html" />
+    <Content Include="Theme\public\rtl\icon.html" />
+    <Content Include="Theme\public\rtl\index.html" />
+    <Content Include="Theme\public\rtl\login.html" />
+    <Content Include="Theme\public\rtl\maps.html" />
+    <Content Include="Theme\public\rtl\no-header-sidebar.html" />
+    <Content Include="Theme\public\rtl\no-header.html" />
+    <Content Include="Theme\public\rtl\no-left-right-sidebar.html" />
+    <Content Include="Theme\public\rtl\no-left-sidebar-main-search.html" />
+    <Content Include="Theme\public\rtl\no-left-sidebar.html" />
+    <Content Include="Theme\public\rtl\no-main-search.html" />
+    <Content Include="Theme\public\rtl\no-right-sidebar.html" />
+    <Content Include="Theme\public\rtl\offline.html" />
+    <Content Include="Theme\public\rtl\panel.html" />
+    <Content Include="Theme\public\rtl\pricing.html" />
+    <Content Include="Theme\public\rtl\progress.html" />
+    <Content Include="Theme\public\rtl\sm.html" />
+    <Content Include="Theme\public\rtl\table.html" />
+    <Content Include="Theme\public\rtl\typography.html" />
+    <Content Include="Theme\public\sm.html" />
+    <Content Include="Theme\public\table.html" />
+    <Content Include="Theme\public\typography.html" />
+    <Content Include="Theme\src\css\countdown.css" />
+    <Content Include="Theme\src\img\cp.png" />
+    <Content Include="Theme\src\img\logo.png" />
+    <Content Include="Theme\src\img\metis-tile.png" />
+    <Content Include="Theme\src\img\pattern\always_grey.png" />
+    <Content Include="Theme\src\img\pattern\arches.png" />
+    <Content Include="Theme\src\img\pattern\batthern.png" />
+    <Content Include="Theme\src\img\pattern\bo_play_pattern.png" />
+    <Content Include="Theme\src\img\pattern\brillant.png" />
+    <Content Include="Theme\src\img\pattern\carbon_fibre.png" />
+    <Content Include="Theme\src\img\pattern\cartographer.png" />
+    <Content Include="Theme\src\img\pattern\crissXcross.png" />
+    <Content Include="Theme\src\img\pattern\diagonal_striped_brick.png" />
+    <Content Include="Theme\src\img\pattern\diamond_upholstery.png" />
+    <Content Include="Theme\src\img\pattern\egg_shell.png" />
+    <Content Include="Theme\src\img\pattern\gplaypattern.png" />
+    <Content Include="Theme\src\img\pattern\greyfloral.png" />
+    <Content Include="Theme\src\img\pattern\irongrip.png" />
+    <Content Include="Theme\src\img\pattern\large_leather.png" />
+    <Content Include="Theme\src\img\pattern\low_contrast_linen.png" />
+    <Content Include="Theme\src\img\pattern\noisy_grid.png" />
+    <Content Include="Theme\src\img\pattern\pool_table.png" />
+    <Content Include="Theme\src\img\pattern\purty_wood.png" />
+    <Content Include="Theme\src\img\pattern\random_grey_variations.png" />
+    <Content Include="Theme\src\img\pattern\retina_wood.png" />
+    <Content Include="Theme\src\img\pattern\rip_jobs.png" />
+    <Content Include="Theme\src\img\pattern\white_tiles.png" />
+    <Content Include="Theme\src\img\pattern\wood_1.png" />
+    <Content Include="Theme\src\img\user.gif" />
+    <Content Include="Theme\src\js\app\chart.js" />
+    <Content Include="Theme\src\js\app\dashboard.js" />
+    <Content Include="Theme\src\js\app\formGeneral.js" />
+    <Content Include="Theme\src\js\app\formValidation.js" />
+    <Content Include="Theme\src\js\app\formWizard.js" />
+    <Content Include="Theme\src\js\app\formWysiwyg.js" />
+    <Content Include="Theme\src\js\app\MetisButton.js" />
+    <Content Include="Theme\src\js\app\metisCalendar.js" />
+    <Content Include="Theme\src\js\app\metisFile.js" />
+    <Content Include="Theme\src\js\app\metisMaps.js" />
+    <Content Include="Theme\src\js\app\metisSortable.js" />
+    <Content Include="Theme\src\js\app\metisTable.js" />
+    <Content Include="Theme\src\js\app\pricing.js" />
+    <Content Include="Theme\src\js\app\progress.js" />
+    <Content Include="Theme\src\js\core\fullscreen.js" />
+    <Content Include="Theme\src\js\core\ie-emulation-modes-warning.js" />
+    <Content Include="Theme\src\js\core\ie10-viewport-bug-workaround.js" />
+    <Content Include="Theme\src\js\core\init.js" />
+    <Content Include="Theme\src\js\core\Metis.js" />
+    <Content Include="Theme\src\js\core\metisAnimatePanel.js" />
+    <Content Include="Theme\src\js\core\metisNavBar.js" />
+    <Content Include="Theme\src\js\countdown.js" />
+    <Content Include="Theme\src\js\style-switcher.js" />
+    <Content Include="Theme\src\lib\bootstrap-daterangepicker\daterangepicker-bs2.css" />
+    <Content Include="Theme\src\lib\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Theme\src\lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Theme\src\lib\bootstrap-daterangepicker\examples.html" />
+    <Content Include="Theme\src\lib\formwizard\changelog.txt" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\jquery.ui.all.css" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\jquery.ui.base.css" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\jquery.ui.core.css" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\base\jquery.ui.theme.css" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Theme\src\lib\formwizard\examples\css\ui-lightness\jquery-ui-1.8.2.custom.css" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_10_custom_validation_initialization.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_11_changing_options_after_initialization.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_12_using_remoteAjax_for_all_steps.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_13_nested_routes.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_14_using_fieldset_as_step_identifier.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_15_add_and_remove_steps_dynamically.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_16_have_the_wizard_ignore_specific_inputs_during_transition.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_17_cancel_the_submit_in_using_beforeSubmit_beforeSend_and_beforeSerialize_callbacks.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_18_disable_jquery_ui_styles_using_disableUIStyles.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_19_summary_page.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_1_straight.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_20_submit_form_without_ajax.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_21_add_steps_using_update_steps_method.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_22_before_step_shown_event.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_2_branch.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_3_bbq_integration_history_handling.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_4_step_shown_event.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_5_methods.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_6_remoteAjax_and_events.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_7_transition_animation.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_8_multiple_wizards.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\example_9_branching_using_checkbox_radiobutton_hidden_.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\json.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\normal_submit.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\store_in_database.html" />
+    <Content Include="Theme\src\lib\formwizard\examples\validate.html" />
+    <Content Include="Theme\src\lib\formwizard\js\bbq.js" />
+    <Content Include="Theme\src\lib\formwizard\js\jquery-1.4.2.min.js" />
+    <Content Include="Theme\src\lib\formwizard\js\jquery-ui-1.8.5.custom.min.js" />
+    <Content Include="Theme\src\lib\formwizard\js\jquery.form.js" />
+    <Content Include="Theme\src\lib\formwizard\js\jquery.form.wizard.js" />
+    <Content Include="Theme\src\lib\formwizard\js\jquery.validate.js" />
+    <Content Include="Theme\src\lib\inputlimiter\jquery.inputlimiter.css" />
+    <Content Include="Theme\src\lib\inputlimiter\jquery.inputlimiter.js" />
+    <Content Include="Theme\src\lib\jquery.gritter\css\jquery.gritter.css" />
+    <Content Include="Theme\src\lib\jquery.gritter\images\gritter-light.png" />
+    <Content Include="Theme\src\lib\jquery.gritter\images\gritter-long.png" />
+    <Content Include="Theme\src\lib\jquery.gritter\images\gritter.png" />
+    <Content Include="Theme\src\lib\jquery.gritter\images\ie-spacer.gif" />
+    <Content Include="Theme\src\lib\jquery.gritter\images\trees.jpg" />
+    <Content Include="Theme\src\lib\jquery.gritter\index.html" />
+    <Content Include="Theme\src\lib\jquery.gritter\js\jquery.gritter.js" />
+    <Content Include="Theme\src\lib\jquery.gritter\js\jquery.gritter.min.js" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\css\jquery.pagedown-bootstrap.css" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\demo\index.html" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\js\jquery.pagedown-bootstrap.combined.js" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\js\jquery.pagedown-bootstrap.combined.min.js" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\js\jquery.pagedown-bootstrap.js" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\js\Markdown.Converter.js" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\js\Markdown.Editor.js" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\js\Markdown.Sanitizer.js" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\LICENSE.txt" />
+    <Content Include="Theme\src\lib\plupload\examples\custom.html" />
+    <Content Include="Theme\src\lib\plupload\examples\dump.php" />
+    <Content Include="Theme\src\lib\plupload\examples\events.html" />
+    <Content Include="Theme\src\lib\plupload\examples\jquery\all_runtimes.html" />
+    <Content Include="Theme\src\lib\plupload\examples\jquery\jquery_ui_widget.html" />
+    <Content Include="Theme\src\lib\plupload\examples\jquery\queue_widget.html" />
+    <Content Include="Theme\src\lib\plupload\examples\jquery\s3.php" />
+    <Content Include="Theme\src\lib\plupload\examples\upload.php" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\ar.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\az.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\bs.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\cs.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\cy.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\da.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\de.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\el.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\en.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\es.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\et.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\fa.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\fi.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\fr.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\he.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\hr.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\hu.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\hy.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\id.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\it.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\ja.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\ka.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\kk.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\km.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\ko.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\lt.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\lv.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\mn.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\ms.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\nl.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\pl.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\pt_BR.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\ro.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\ru.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\sk.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\sq.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\sr.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\sr_RS.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\sv.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\th_TH.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\tr.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\uk_UA.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\zh_CN.js" />
+    <Content Include="Theme\src\lib\plupload\js\i18n\zh_TW.js" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\img\done.gif" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\img\error.gif" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.ui.plupload\img\loading.gif" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="Theme\src\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.min.js" />
+    <Content Include="Theme\src\lib\plupload\js\moxie.js" />
+    <Content Include="Theme\src\lib\plupload\js\moxie.min.js" />
+    <Content Include="Theme\src\lib\plupload\js\Moxie.swf" />
+    <Content Include="Theme\src\lib\plupload\js\plupload.dev.js" />
+    <Content Include="Theme\src\lib\plupload\js\plupload.full.min.js" />
+    <Content Include="Theme\src\lib\plupload\js\plupload.min.js" />
+    <Content Include="Theme\src\lib\plupload\license.txt" />
+    <Content Include="Theme\src\lib\timepicker\css\bootstrap-responsive.css" />
+    <Content Include="Theme\src\lib\timepicker\css\bootstrap-timepicker.css" />
+    <Content Include="Theme\src\lib\timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="Theme\src\lib\timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Theme\src\lib\timepicker\js\bootstrap-timepicker.min.js" />
+    <Content Include="Theme\src\lib\validVal\index.html" />
+    <Content Include="Theme\src\lib\validVal\js\jquery.validVal-customValidations.js" />
+    <Content Include="Theme\src\lib\validVal\js\jquery.validVal-debugger.js" />
+    <Content Include="Theme\src\lib\validVal\js\jquery.validVal.js" />
+    <Content Include="Theme\src\lib\validVal\js\jquery.validVal.min.js" />
+    <Content Include="Theme\src\lib\validVal\serverside-validations\index.html" />
+    <Content Include="Theme\src\lib\validVal\serverside-validations\validations.php" />
+    <Content Include="Theme\src\tasks\assemble.js" />
+    <Content Include="Theme\src\tasks\browserSync.js" />
+    <Content Include="Theme\src\tasks\clean.js" />
+    <Content Include="Theme\src\tasks\concat.js" />
+    <Content Include="Theme\src\tasks\connect.js" />
+    <Content Include="Theme\src\tasks\copy.js" />
+    <Content Include="Theme\src\tasks\htmlmin.js" />
+    <Content Include="Theme\src\tasks\jshint.js" />
+    <Content Include="Theme\src\tasks\less.js" />
+    <Content Include="Theme\src\tasks\modernizr.js" />
+    <Content Include="Theme\src\tasks\uglify.js" />
+    <Content Include="Theme\src\tasks\usebanner.js" />
+    <Content Include="Theme\src\tasks\watch.js" />
+    <Content Include="Theme\src\tasks\wiredep.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Theme\.babelrc" />
+    <Content Include="Theme\.bowerrc" />
+    <Content Include="Theme\.gitattributes" />
+    <Content Include="Theme\.gitignore" />
+    <Content Include="Theme\.jshintrc" />
+    <Content Include="Theme\.travis.yml" />
+    <Content Include="Theme\.verb.md" />
+    <Content Include="Theme\bower.json" />
+    <Content Include="Theme\CHANGELOG" />
+    <Content Include="Theme\docs\LICENSE.tmpl.md" />
+    <Content Include="Theme\LICENSE.md" />
+    <Content Include="Theme\package.json" />
+    <Content Include="Theme\public\assets\img\pattern\README.md" />
+    <Content Include="Theme\public\assets\less\theme.less" />
+    <Content Include="Theme\public\assets\lib\bootstrap-daterangepicker\bower.json" />
+    <Content Include="Theme\public\assets\lib\bootstrap-daterangepicker\package.json" />
+    <Content Include="Theme\public\assets\lib\bootstrap-daterangepicker\README.md" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Theme\public\assets\lib\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Theme\public\assets\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Theme\public\assets\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Theme\public\assets\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Theme\public\assets\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Theme\public\assets\lib\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Theme\public\assets\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Theme\public\assets\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Theme\public\assets\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Theme\public\assets\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Theme\public\assets\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Theme\public\assets\lib\formwizard\README.md" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\bower.json" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\package.json" />
+    <Content Include="Theme\public\assets\lib\jquery.gritter\README.markdown" />
+    <Content Include="Theme\public\assets\lib\jquery\jquery.min.map" />
+    <Content Include="Theme\public\assets\lib\metismenu\metisMenu.js.map" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\less\jquery.pagedown-bootstrap.less" />
+    <Content Include="Theme\public\assets\lib\pagedown-bootstrap\README.md" />
+    <Content Include="Theme\public\assets\lib\plupload\js\Moxie.xap" />
+    <Content Include="Theme\public\assets\lib\plupload\readme.md" />
+    <Content Include="Theme\public\assets\lib\validVal\bower.json" />
+    <Content Include="Theme\public\assets\lib\validVal\README.md" />
+    <Content Include="Theme\public\assets\lib\validVal\validVal.jquery.json" />
+    <Content Include="Theme\README.md" />
+    <Content Include="Theme\src\img\pattern\README.md" />
+    <Content Include="Theme\src\js\.jshintrc" />
+    <Content Include="Theme\src\less\error\error.less" />
+    <Content Include="Theme\src\less\login\login.less" />
+    <Content Include="Theme\src\less\main\components\box.less" />
+    <Content Include="Theme\src\less\main\components\button.less" />
+    <Content Include="Theme\src\less\main\components\calendar.less" />
+    <Content Include="Theme\src\less\main\components\checkbox.less" />
+    <Content Include="Theme\src\less\main\components\component.less" />
+    <Content Include="Theme\src\less\main\components\innerHR.less" />
+    <Content Include="Theme\src\less\main\components\pricing.less" />
+    <Content Include="Theme\src\less\main\components\progressbar.less" />
+    <Content Include="Theme\src\less\main\components\quick-btn.less" />
+    <Content Include="Theme\src\less\main\components\scroll-bar.less" />
+    <Content Include="Theme\src\less\main\components\simple-table.less" />
+    <Content Include="Theme\src\less\main\components\sortable-table.less" />
+    <Content Include="Theme\src\less\main\components\sparkline.less" />
+    <Content Include="Theme\src\less\main\components\stats-box.less" />
+    <Content Include="Theme\src\less\main\components\wellDark.less" />
+    <Content Include="Theme\src\less\main\general\base.less" />
+    <Content Include="Theme\src\less\main\general\content.less" />
+    <Content Include="Theme\src\less\main\general\footer.less" />
+    <Content Include="Theme\src\less\main\general\head.less" />
+    <Content Include="Theme\src\less\main\general\left.less" />
+    <Content Include="Theme\src\less\main\general\menu.less" />
+    <Content Include="Theme\src\less\main\general\top.less" />
+    <Content Include="Theme\src\less\main\hack.less" />
+    <Content Include="Theme\src\less\main\helper\background.less" />
+    <Content Include="Theme\src\less\main\helper\bg-image.less" />
+    <Content Include="Theme\src\less\main\helper\flex-embed.less" />
+    <Content Include="Theme\src\less\main\helper\margin.less" />
+    <Content Include="Theme\src\less\main\helper\padding.less" />
+    <Content Include="Theme\src\less\main\layout\layout.less" />
+    <Content Include="Theme\src\less\main\layout\layout2.less" />
+    <Content Include="Theme\src\less\main\layout\right.less" />
+    <Content Include="Theme\src\less\main\layout\sticky.less" />
+    <Content Include="Theme\src\less\main\var-suit.less" />
+    <Content Include="Theme\src\less\main\variable.less" />
+    <Content Include="Theme\src\less\style-switcher.less" />
+    <Content Include="Theme\src\less\style.less" />
+    <Content Include="Theme\src\less\theme.less" />
+    <Content Include="Theme\src\lib\bootstrap-daterangepicker\.bower.json" />
+    <Content Include="Theme\src\lib\bootstrap-daterangepicker\bower.json" />
+    <Content Include="Theme\src\lib\bootstrap-daterangepicker\package.json" />
+    <Content Include="Theme\src\lib\bootstrap-daterangepicker\README.md" />
+    <Content Include="Theme\src\lib\formwizard\.bower.json" />
+    <Content Include="Theme\src\lib\formwizard\README.md" />
+    <Content Include="Theme\src\lib\jquery.gritter\.bower.json" />
+    <Content Include="Theme\src\lib\jquery.gritter\bower.json" />
+    <Content Include="Theme\src\lib\jquery.gritter\package.json" />
+    <Content Include="Theme\src\lib\jquery.gritter\README.markdown" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\.bower.json" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\less\jquery.pagedown-bootstrap.less" />
+    <Content Include="Theme\src\lib\pagedown-bootstrap\README.md" />
+    <Content Include="Theme\src\lib\plupload\.bower.json" />
+    <Content Include="Theme\src\lib\plupload\js\Moxie.xap" />
+    <Content Include="Theme\src\lib\plupload\readme.md" />
+    <Content Include="Theme\src\lib\validVal\bower.json" />
+    <Content Include="Theme\src\lib\validVal\README.md" />
+    <Content Include="Theme\src\lib\validVal\validVal.jquery.json" />
+    <Content Include="Theme\src\templates\data\alert.json" />
+    <Content Include="Theme\src\templates\data\awesome.json" />
+    <Content Include="Theme\src\templates\data\bgimage.json" />
+    <Content Include="Theme\src\templates\data\button.json" />
+    <Content Include="Theme\src\templates\data\dataTable.json" />
+    <Content Include="Theme\src\templates\data\icons.json" />
+    <Content Include="Theme\src\templates\data\module.json" />
+    <Content Include="Theme\src\templates\data\tableBase.json" />
+    <Content Include="Theme\src\templates\layouts\countdown.hbs" />
+    <Content Include="Theme\src\templates\layouts\default.hbs" />
+    <Content Include="Theme\src\templates\layouts\errors.hbs" />
+    <Content Include="Theme\src\templates\layouts\fixed.hbs" />
+    <Content Include="Theme\src\templates\layouts\login.hbs" />
+    <Content Include="Theme\src\templates\layouts\post.hbs" />
+    <Content Include="Theme\src\templates\layouts\post.md.hbs" />
+    <Content Include="Theme\src\templates\pages\403.hbs" />
+    <Content Include="Theme\src\templates\pages\404.hbs" />
+    <Content Include="Theme\src\templates\pages\405.hbs" />
+    <Content Include="Theme\src\templates\pages\500.hbs" />
+    <Content Include="Theme\src\templates\pages\503.hbs" />
+    <Content Include="Theme\src\templates\pages\alterne.hbs" />
+    <Content Include="Theme\src\templates\pages\bgcolor.hbs" />
+    <Content Include="Theme\src\templates\pages\bgimage.hbs" />
+    <Content Include="Theme\src\templates\pages\blank.hbs" />
+    <Content Include="Theme\src\templates\pages\boxed.hbs" />
+    <Content Include="Theme\src\templates\pages\button.hbs" />
+    <Content Include="Theme\src\templates\pages\calendar.hbs" />
+    <Content Include="Theme\src\templates\pages\chart.hbs" />
+    <Content Include="Theme\src\templates\pages\countdown.hbs" />
+    <Content Include="Theme\src\templates\pages\dashboard.hbs" />
+    <Content Include="Theme\src\templates\pages\fixed-header-boxed.hbs" />
+    <Content Include="Theme\src\templates\pages\fixed-header-fixed-mini-sidebar.hbs" />
+    <Content Include="Theme\src\templates\pages\fixed-header-menu.hbs" />
+    <Content Include="Theme\src\templates\pages\fixed-header-mini-sidebar.hbs" />
+    <Content Include="Theme\src\templates\pages\fixed-header.hbs" />
+    <Content Include="Theme\src\templates\pages\fixed-menu-boxed.hbs" />
+    <Content Include="Theme\src\templates\pages\fixed-menu.hbs" />
+    <Content Include="Theme\src\templates\pages\fixed-mini-sidebar.hbs" />
+    <Content Include="Theme\src\templates\pages\form-general.hbs" />
+    <Content Include="Theme\src\templates\pages\form-validation.hbs" />
+    <Content Include="Theme\src\templates\pages\form-wizard.hbs" />
+    <Content Include="Theme\src\templates\pages\form-wysiwyg.hbs" />
+    <Content Include="Theme\src\templates\pages\fxhmoxed.hbs" />
+    <Content Include="Theme\src\templates\pages\grid.hbs" />
+    <Content Include="Theme\src\templates\pages\icon.hbs" />
+    <Content Include="Theme\src\templates\pages\index.hbs" />
+    <Content Include="Theme\src\templates\pages\login.hbs" />
+    <Content Include="Theme\src\templates\pages\maps.hbs" />
+    <Content Include="Theme\src\templates\pages\no-header-sidebar.hbs" />
+    <Content Include="Theme\src\templates\pages\no-header.hbs" />
+    <Content Include="Theme\src\templates\pages\no-left-right-sidebar.hbs" />
+    <Content Include="Theme\src\templates\pages\no-left-sidebar-main-search.hbs" />
+    <Content Include="Theme\src\templates\pages\no-left-sidebar.hbs" />
+    <Content Include="Theme\src\templates\pages\no-main-search.hbs" />
+    <Content Include="Theme\src\templates\pages\no-right-sidebar.hbs" />
+    <Content Include="Theme\src\templates\pages\offline.hbs" />
+    <Content Include="Theme\src\templates\pages\panel.hbs" />
+    <Content Include="Theme\src\templates\pages\pricing.hbs" />
+    <Content Include="Theme\src\templates\pages\progress.hbs" />
+    <Content Include="Theme\src\templates\pages\sm.hbs" />
+    <Content Include="Theme\src\templates\pages\table.hbs" />
+    <Content Include="Theme\src\templates\pages\typography.hbs" />
+    <Content Include="Theme\src\templates\partials\alert.hbs" />
+    <Content Include="Theme\src\templates\partials\bgimage.hbs" />
+    <Content Include="Theme\src\templates\partials\boxed.hbs" />
+    <Content Include="Theme\src\templates\partials\button.hbs" />
+    <Content Include="Theme\src\templates\partials\dataTable.hbs" />
+    <Content Include="Theme\src\templates\partials\footer.hbs" />
+    <Content Include="Theme\src\templates\partials\form\bear-option-list.hbs" />
+    <Content Include="Theme\src\templates\partials\form\country-option-list.hbs" />
+    <Content Include="Theme\src\templates\partials\form\football-option-list.hbs" />
+    <Content Include="Theme\src\templates\partials\helpModal.hbs" />
+    <Content Include="Theme\src\templates\partials\icons.hbs" />
+    <Content Include="Theme\src\templates\partials\left.hbs" />
+    <Content Include="Theme\src\templates\partials\mainSearch.hbs" />
+    <Content Include="Theme\src\templates\partials\meta.hbs" />
+    <Content Include="Theme\src\templates\partials\module.hbs" />
+    <Content Include="Theme\src\templates\partials\nav.hbs" />
+    <Content Include="Theme\src\templates\partials\right.hbs" />
+    <Content Include="Theme\src\templates\partials\rtl-style.hbs" />
+    <Content Include="Theme\src\templates\partials\snippets\lorem-ipsum\lorem-paragraph.hbs" />
+    <Content Include="Theme\src\templates\partials\snippets\lorem-ipsum\lorem-sentence.hbs" />
+    <Content Include="Theme\src\templates\partials\snippets\placeholder-auto.hbs" />
+    <Content Include="Theme\src\templates\partials\snippets\placeholder-medium.hbs" />
+    <Content Include="Theme\src\templates\partials\snippets\placeholder-small.hbs" />
+    <Content Include="Theme\src\templates\partials\style.hbs" />
+    <Content Include="Theme\src\templates\partials\tableBase.hbs" />
+    <Content Include="Theme\src\templates\partials\tableSortable.hbs" />
+    <Content Include="Theme\src\templates\partials\toolbar.hbs" />
+    <Content Include="Theme\_config.yml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57615</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57615/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

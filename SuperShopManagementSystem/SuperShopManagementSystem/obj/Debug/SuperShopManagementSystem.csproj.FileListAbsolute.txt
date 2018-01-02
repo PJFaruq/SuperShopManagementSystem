@@ -1,0 +1,84 @@
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\ApplicationInsights.config
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\SuperShopManagementSystem.dll.config
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\SuperShopManagementSystem.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\SuperShopManagementSystem.pdb
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Antlr3.Runtime.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.Web.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.ApplicationInsights.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Newtonsoft.Json.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Helpers.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Mvc.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Optimization.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Razor.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.Razor.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\WebGrease.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Helpers.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Mvc.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Optimization.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Razor.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.Razor.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Antlr3.Runtime.pdb
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Newtonsoft.Json.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.ApplicationInsights.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.Web.xml
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.dll
+C:\Users\PJ Faruq\Desktop\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.pdb
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\ApplicationInsights.config
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\SuperShopManagementSystem.dll.config
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\SuperShopManagementSystem.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\SuperShopManagementSystem.pdb
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Antlr3.Runtime.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.Agent.Intercept.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.DependencyCollector.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.Web.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.WindowsServer.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.ApplicationInsights.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.Web.Infrastructure.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Newtonsoft.Json.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Helpers.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Mvc.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Optimization.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Razor.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.Deployment.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.Razor.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\WebGrease.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Helpers.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Mvc.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Optimization.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.Razor.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.Deployment.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\System.Web.WebPages.Razor.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Antlr3.Runtime.pdb
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Newtonsoft.Json.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.ApplicationInsights.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.DependencyCollector.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.WindowsServer.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\Microsoft.AI.Web.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.csprojResolveAssemblyReference.cache
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.csproj.CoreCompileInputs.cache
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.pdb
