@@ -164,10 +164,7 @@
                 </div>
                 <!-- /.search-bar -->
                 <div class="main-bar">
-                    <h3>
-                        <i class="fa fa-square-o"></i>&nbsp;
-                        Blank Page
-                    </h3>
+
                 </div>
                 <!-- /.main-bar -->
             </header>
@@ -181,7 +178,7 @@
                 </div>
                 <div class="user-wrapper bg-dark">
                     <a class="user-link" href="">
-                        <img class="media-object img-thumbnail user-img" alt="User Picture" src="~/Theme/public/assets/img/user.gif">
+                        <img class="media-object img-thumbnail user-img" width="64" height="64" alt="User Picture" src="~/Theme/public/assets/img/admin-icon.png">
                         <span class="label label-danger user-label">16</span>
                     </a>
 
@@ -541,7 +538,10 @@
         <div id="content">
             <div class="outer">
                 <div class="inner bg-light lter">
-                    @RenderBody()
+                    <div style="min-height:775px">
+                        @RenderBody()
+                    </div>
+                    
                 </div>
                 <!-- /.inner -->
             </div>

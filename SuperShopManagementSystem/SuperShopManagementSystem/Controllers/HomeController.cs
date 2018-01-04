@@ -26,5 +26,9 @@ namespace SuperShopManagementSystem.Controllers
 
             return View();
         }
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }
