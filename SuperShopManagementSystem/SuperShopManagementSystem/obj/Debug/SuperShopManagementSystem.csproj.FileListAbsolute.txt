@@ -82,3 +82,11 @@ F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\Su
 F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.csproj.CoreCompileInputs.cache
 F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.dll
 F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.pdb
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\EntityFramework.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\EntityFramework.SqlServer.dll
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\EntityFramework.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\bin\EntityFramework.SqlServer.xml
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.Migrations.InitialCreate.resources
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.csproj.GenerateResource.Cache
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.Migrations.Item_Category_Model_Added.resources
+F:\BITM\Project\SuperShopManagementSystem\SuperShopManagementSystem\obj\Debug\SuperShopManagementSystem.Migrations.ItemCategory_IsDeleted_Added.resources

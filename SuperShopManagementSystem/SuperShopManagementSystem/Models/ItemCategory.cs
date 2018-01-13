@@ -8,6 +8,7 @@ namespace SuperShopManagementSystem.Models
 {
     public class ItemCategory
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -21,7 +22,15 @@ namespace SuperShopManagementSystem.Models
         [DataType(DataType.MultilineText)]
         [StringLength(maximumLength:100,ErrorMessage ="Maximum 100 Chararcters are Allowed")]
         public string Description { get; set; }
-        public virtual List<Item> Items { get; set; }
+        public byte[] Image { get; set; }
+        [Display(Name="Parent Category")]
 
+        public bool IsDeleted { get; set; }
+        public  Nullable<int> ParentId { get; set; }
+        public virtual ItemCategory Parent { get; set; }
+
+        public virtual List<ItemCategory> ItemCategories { get; set; }
+
+        public virtual List<Item> Items { get; set; }
     }
 }

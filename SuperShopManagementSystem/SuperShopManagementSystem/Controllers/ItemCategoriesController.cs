@@ -1,15 +1,18 @@
 ﻿using SuperShopManagementSystem.BLL;
 using SuperShopManagementSystem.Models;
+using SuperShopManagementSystem.Models.DatabaseContex;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace SuperShopManagementSystem.Controllers
 {
     public class ItemCategoriesController : Controller
     {
+        private SuperShopDbContext db = new SuperShopDbContext();
         ItemCategoryBLL itemCategoryBll = new ItemCategoryBLL();
         bool status = false;
 
@@ -19,32 +22,59 @@ namespace SuperShopManagementSystem.Controllers
             return View();
         }
 
+
         // Create Item Category [Post Request]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ItemCategory itemCategory)
+        public ActionResult Create(ItemCategory itemCategory,HttpPostedFileBase ImageFile)
         {
+            if (ImageFile == null)
+            {
+                ModelState.AddModelError("Image", "Please Upload an Image");
+            }
 
-            ItemCategoryBLL itemCategoryBll = new ItemCategoryBLL();
-            bool status = false;
-            status = itemCategoryBll.Create(itemCategory);
-            return View();
+
+            bool isValidFormat = itemCategoryBll.CheckImageFormat(ImageFile);
+            if (isValidFormat == false)
+            {
+                ModelState.AddModelError("Image", "Only jpg , png , jpeg are allowed");
+            }
+
+            itemCategory.IsDeleted = false;
+
+            if (ModelState.IsValid)
+            {
+                
+                status = itemCategoryBll.Create(itemCategory, ImageFile);
+                if (status == true)
+                {
+
+                    ViewBag.Msg = "Item Category Successfully Added";
+                    ModelState.Clear();
+                    return View();
+                }
+                if (status == true)
+                {
+
+                    ViewBag.Msg = "Item Category Added Failed";
+                }
+
+            }
+            
+            return View(itemCategory);
         }
+
+
 
         //Update Item Category [Get Request]
         public ActionResult Update(int ?Id)
         {
             if (Id == null)
             {
-                return RedirectToAction("Error", "Home", null);
+                return RedirectToAction("Error", "Home");
             }
-            ItemCategory itemCategory = new ItemCategory();
-            //ItemCategory itemCategory = itemCategoryBll.GetById(Id);
-            //Test Value
-            itemCategory.Id = 1;
-            itemCategory.Name = "Electronics";
-            itemCategory.Code = "E001";
-            itemCategory.Description = "This is Electronics Product";
+
+            ItemCategory itemCategory = itemCategoryBll.GetById(Id);
 
             if (itemCategory == null)
             {
@@ -54,6 +84,8 @@ namespace SuperShopManagementSystem.Controllers
 
             return View(itemCategory);
         }
+
+
 
         //Update Item Category [Post Request]
         [HttpPost]
@@ -64,36 +96,68 @@ namespace SuperShopManagementSystem.Controllers
             return View();
         }
 
-        //Delete Item Category [Get Request]
-        public ActionResult Delete(int? Id)
-        {
-            if (Id == null)
-            {
-                return RedirectToAction("Error", "Home", null);
-            }
 
-            ItemCategory itemCategory = itemCategoryBll.GetById(Id);
 
-            if (itemCategory == null)
-            {
-                return RedirectToAction("Error", "Home", null);
-            }
-
-            return View(itemCategory);
-        }
-
+        [HttpPost]
         //Delete Item Category [Post Request]
-        public ActionResult Delete(int Id)
+        public JsonResult Delete(int id)
         {
-            status = itemCategoryBll.Delete(Id);
-            return View();
+            status = itemCategoryBll.Delete(id);
+            if (status)
+            {
+                return Json(1);
+            }
+            return Json(0);
         }
+
+
 
         //Get All Category Item
         public ActionResult ShowAll()
         {
-            //List<ItemCategory> listOfItemCategory = itemCategoryBll.GetAll();
-            return View();
+
+            List<ItemCategory> listOfItemCategory = itemCategoryBll.GetAll();
+            //db.Configuration.ProxyCreationEnabled = false;
+            //var jsonDataList = listOfItemCategory.Select(model => new { Name = model.Name, Code = model.Code, Description = model.Description, PCategory=model.Parent.Name });
+            //JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+            //javaScriptSerializer.MaxJsonLength = Int32.MaxValue;
+            //string jsonData = javaScriptSerializer.Serialize(jsonDataList);
+            //return Json(jsonData, JsonRequestBehavior.AllowGet);
+            return View(listOfItemCategory);
+        }
+
+
+        //Get All Parent Category
+        public JsonResult GetParentCategories()
+        {
+            //db.Configuration.ProxyCreationEnabled = false;
+            var listOfItemCategory = itemCategoryBll.GetParentCategories();
+            var jsonData = listOfItemCategory.Select(model => new { Id = model.Id, Name = model.Name });
+            return Json(jsonData, JsonRequestBehavior.AllowGet);
+        }
+
+
+        //Generating Random Category Code
+        public JsonResult GetCategoryCode()
+        {
+            string categoryCode=itemCategoryBll.GetCategoryCode();
+            return Json(categoryCode);
+        }
+
+
+        //Checking Category Name Availability
+        public JsonResult CheckCategoryName(string data)
+        {
+             status =itemCategoryBll.CheckCategoryName(data);
+            if (status == true)
+            {
+                return Json(1);
+            }
+            return Json(0);
+
+
         }
     }
+
+
 }
