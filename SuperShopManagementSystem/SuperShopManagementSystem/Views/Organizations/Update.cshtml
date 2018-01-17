@@ -1,0 +1,118 @@
+﻿@model SuperShopManagementSystem.Models.Organization
+
+@{
+    ViewBag.Title = "Update";
+}
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="text-center">Update An Organization</h4>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        @using (Html.BeginForm("Update", "Organizations", FormMethod.Post, new { enctype = "multipart/form-data", id = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                @if (ViewBag.Msg != null)
+                                {
+                                    <div style="border:1px solid #e6dbdb;padding:5px;background-color:#f5f5f5;color:green;font-weight:bold;border-radius:5px" class="text-center col-md-offset-3">@ViewBag.Msg</div>
+                                    <br />
+                                }
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="text-danger" id="ErrorMsg"></div>
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                                        @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        <input type="file" name="ImageFile" id="Image" />
+                                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                        <br>
+                                        <div class="col-md-6" id="CurrentImage">
+                                            @if (Model.Image != null)
+                                            {
+                                                string imageBase64 = Convert.ToBase64String(Model.Image);
+                                                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                                                <img src="@imageSrc" width="150" height="150" class="thumbnail" />
+                                            }
+
+
+                                        </div>
+                                        <div class="col-md-6" id="NewImage">
+                                            <div id="imagePreview" style="display:none">
+                                                <div class="thumbnail">
+                                                    <img class="img-responsive" id="TargetImage" />
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <p id="Imagedescription"></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" value="Update" class="btn btn-block btn-success btn-lg" />
+                                    </div>
+                                </div>
+                                @Html.Hidden("CurrentOrganizationName", Model.Name)
+                                @Html.HiddenFor(model => model.IsDeleted)
+                                @Html.Hidden("CurrentImage", Model.Image)
+
+                            </div>
+                        }
+
+                        <div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ProjectScript/Organization/Update_Organization.js"></script>
+}

@@ -26,6 +26,7 @@ namespace SuperShopManagementSystem.DAL
         }
 
 
+
         internal bool Update(ItemCategory itemCategory)
         {
             return status;
@@ -68,7 +69,7 @@ namespace SuperShopManagementSystem.DAL
 
         internal bool CheckCategoryName(string categoryName)
         {
-            if (db.ItemCategories.Any(model => model.Name == categoryName))
+            if (db.ItemCategories.Any(model => model.Name == categoryName && model.IsDeleted==false))
             {
                 status = true;
             }

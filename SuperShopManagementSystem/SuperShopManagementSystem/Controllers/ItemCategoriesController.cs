@@ -12,7 +12,6 @@ namespace SuperShopManagementSystem.Controllers
 {
     public class ItemCategoriesController : Controller
     {
-        private SuperShopDbContext db = new SuperShopDbContext();
         ItemCategoryBLL itemCategoryBll = new ItemCategoryBLL();
         bool status = false;
 
@@ -67,14 +66,14 @@ namespace SuperShopManagementSystem.Controllers
 
 
         //Update Item Category [Get Request]
-        public ActionResult Update(int ?Id)
+        public ActionResult Update(int ?id)
         {
-            if (Id == null)
+            if (id == null)
             {
                 return RedirectToAction("Error", "Home");
             }
 
-            ItemCategory itemCategory = itemCategoryBll.GetById(Id);
+            ItemCategory itemCategory = itemCategoryBll.GetById(id);
 
             if (itemCategory == null)
             {

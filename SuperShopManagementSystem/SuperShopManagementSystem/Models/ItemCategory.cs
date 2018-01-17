@@ -11,22 +11,26 @@ namespace SuperShopManagementSystem.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Name is Required")]
         [StringLength(maximumLength: 50, ErrorMessage = "Chategory Name Should be in Between 2 and 50 Characters",MinimumLength =2)]
         public string Name { get; set; }
 
 
-        [Required]
+        [Required(ErrorMessage = "Code is Required")]
         public string Code { get; set; }
 
         [DataType(DataType.MultilineText)]
         [StringLength(maximumLength:100,ErrorMessage ="Maximum 100 Chararcters are Allowed")]
         public string Description { get; set; }
-        public byte[] Image { get; set; }
-        [Display(Name="Parent Category")]
 
+
+        public byte[] Image { get; set; }
+        
         public bool IsDeleted { get; set; }
-        public  Nullable<int> ParentId { get; set; }
+
+
+        [Display(Name = "Parent Category")]
+        public Nullable<int> ParentId { get; set; }
         public virtual ItemCategory Parent { get; set; }
 
         public virtual List<ItemCategory> ItemCategories { get; set; }

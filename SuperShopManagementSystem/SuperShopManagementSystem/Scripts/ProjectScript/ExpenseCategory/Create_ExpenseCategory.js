@@ -1,0 +1,74 @@
+﻿/// <reference path="~/Themes/bower_components/jquery/dist/jquery.min.js" />
+$(document).ready(function () {
+
+    //Parent Category Hide
+    $("#ParentCategoryDiv").hide();
+    $("input[name='Category']").on("change", function () {
+
+        var radioBtnValue = $("input[name='Category']:checked").val();
+        if (radioBtnValue == "RootCategory") {
+            $("#ParentCategoryDiv").hide();
+        }
+        if (radioBtnValue == "ChildCategory") {
+            $.ajax({
+                url: "/ExpenseCategories/GetParentCategories",
+                type: "post",
+                data: "",
+                success: function (response) {
+                    if (response != null) {
+                        $("#ParentId").empty();
+                        $("#ParentId").html("<option>---Select Option---</Option>");
+                        $.each(response, function (index, value) {
+
+                            $("#ParentId").append("<option value='" + value.Id + "'>" + value.Name + "</option>");
+                        });
+                    }
+                }
+            });
+
+            $("#ParentCategoryDiv").show();
+        }
+    })
+
+
+    //Random Code Generating 
+    $("#Name").focus(function () {
+        $.ajax({
+            url: "/ExpenseCategories/GetCategoryCode",
+            method: "post",
+            data: "",
+            success: function (response) {
+                $("input[name='Code']").val(response);
+            }
+        });
+    });
+
+
+    //Check Category Name Availability
+    var isValid = false;
+    $("#ExpenseCategoryForm").submit(function () {
+        if (isValid == true) {
+            return false;
+        }
+    });
+    $("#Name").blur(function () {
+        var name = $("input[name='Name']").val();
+        $.ajax({
+            url: "/ExpenseCategories/CheckCategoryName",
+            method: "post",
+            data: { data: name },
+            success: function (response) {
+                if (response == 1) {
+                    $("#ErrorMsg").html("This Category Name is Already Exist");
+                    isValid = true;
+                }
+                if (response == 0) {
+                    isValid = false;
+                    $("#ErrorMsg").empty();
+
+                }
+            }
+        });
+    });
+
+});

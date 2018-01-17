@@ -150,29 +150,57 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\DropDownBLL.cs" />
+    <Compile Include="BLL\ExpenseCategoryBLL.cs" />
+    <Compile Include="BLL\ExpenseItemBLL.cs" />
+    <Compile Include="BLL\ItemBLL.cs" />
     <Compile Include="BLL\ItemCategoryBLL.cs" />
+    <Compile Include="BLL\OrganizationBLL.cs" />
+    <Compile Include="Controllers\ExpenseCategoriesController.cs" />
+    <Compile Include="Controllers\ExpenseItemsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemCategoriesController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\OrganizationsController.cs" />
+    <Compile Include="DAL\DropDownDAL.cs" />
+    <Compile Include="DAL\ExpenseCategoryDAL.cs" />
+    <Compile Include="DAL\ExpenseItemDAL.cs" />
     <Compile Include="DAL\ItemCategoryDAL.cs" />
+    <Compile Include="DAL\ItemDAL.cs" />
+    <Compile Include="DAL\OrganizationDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801080638547_InitialCreate.cs" />
-    <Compile Include="Migrations\201801080638547_InitialCreate.Designer.cs">
-      <DependentUpon>201801080638547_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201801141519073_Initial_Create.cs" />
+    <Compile Include="Migrations\201801141519073_Initial_Create.Designer.cs">
+      <DependentUpon>201801141519073_Initial_Create.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801081924451_Item_Category_Model_Added.cs" />
-    <Compile Include="Migrations\201801081924451_Item_Category_Model_Added.Designer.cs">
-      <DependentUpon>201801081924451_Item_Category_Model_Added.cs</DependentUpon>
+    <Compile Include="Migrations\201801142042152_Item_And_ItemCategory_DataAnnotation_Added.cs" />
+    <Compile Include="Migrations\201801142042152_Item_And_ItemCategory_DataAnnotation_Added.Designer.cs">
+      <DependentUpon>201801142042152_Item_And_ItemCategory_DataAnnotation_Added.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801131829001_ItemCategory_IsDeleted_Added.cs" />
-    <Compile Include="Migrations\201801131829001_ItemCategory_IsDeleted_Added.Designer.cs">
-      <DependentUpon>201801131829001_ItemCategory_IsDeleted_Added.cs</DependentUpon>
+    <Compile Include="Migrations\201801161006202_Expense_Category_And_Item_Addedd.cs" />
+    <Compile Include="Migrations\201801161006202_Expense_Category_And_Item_Addedd.Designer.cs">
+      <DependentUpon>201801161006202_Expense_Category_And_Item_Addedd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801171802019_Organization_And_Outlet_Model_Added.cs" />
+    <Compile Include="Migrations\201801171802019_Organization_And_Outlet_Model_Added.Designer.cs">
+      <DependentUpon>201801171802019_Organization_And_Outlet_Model_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801172000240_Organization_And_Outlet_IsDeleted_Added.cs" />
+    <Compile Include="Migrations\201801172000240_Organization_And_Outlet_IsDeleted_Added.Designer.cs">
+      <DependentUpon>201801172000240_Organization_And_Outlet_IsDeleted_Added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Common.cs" />
     <Compile Include="Models\DatabaseContex\SuperShopDbContext.cs" />
+    <Compile Include="Models\DropDownList.cs" />
+    <Compile Include="Models\ExpenseCategory.cs" />
+    <Compile Include="Models\ExpenseItem.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemCategory.cs" />
+    <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\Outlet.cs" />
     <Compile Include="Models\Party.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -197,10 +225,20 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\ProjectScritp\ItemCategory\ItemCategories_Update.js" />
-    <Content Include="Scripts\ProjectScritp\ItemCategory\ItemCategory_Create.js" />
-    <Content Include="Scripts\ProjectScritp\ItemCategory\ItemCategory_ShowAll.js" />
-    <Content Include="Scripts\ProjectScritp\Project.js" />
+    <Content Include="Scripts\ProjectScript\ExpenseCategory\Create_ExpenseCategory.js" />
+    <Content Include="Scripts\ProjectScript\ExpenseItem\Create_ExpenseItem.js" />
+    <Content Include="Scripts\ProjectScript\ExpenseItem\ShowAll_ExpenseItem.js" />
+    <Content Include="Scripts\ProjectScript\ExpenseItem\Update_ExpenseItem.js" />
+    <Content Include="Scripts\ProjectScript\ItemCategory\ItemCategories_Update.js" />
+    <Content Include="Scripts\ProjectScript\ItemCategory\ItemCategory_Create.js" />
+    <Content Include="Scripts\ProjectScript\ItemCategory\ItemCategory_ShowAll.js" />
+    <Content Include="Scripts\ProjectScript\Item\Create_Item.js" />
+    <Content Include="Scripts\ProjectScript\Item\ShowAll_Item.js" />
+    <Content Include="Scripts\ProjectScript\Item\Update_Item.js" />
+    <Content Include="Scripts\ProjectScript\Organization\Create_Organization.js" />
+    <Content Include="Scripts\ProjectScript\Organization\ShowAll_Organization.js" />
+    <Content Include="Scripts\ProjectScript\Organization\Update_Organization.js" />
+    <Content Include="Scripts\ProjectScript\Project.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Themes\.gitignore" />
@@ -7499,6 +7537,18 @@
     <Content Include="Themes\yarn.lock" />
     <Content Include="Views\ItemCategories\Create.cshtml" />
     <Content Include="Views\ItemCategories\ShowAll.cshtml" />
+    <Content Include="Views\Items\Create.cshtml" />
+    <Content Include="Views\Items\Update.cshtml" />
+    <Content Include="Views\Items\ShowAll.cshtml" />
+    <Content Include="Views\Items\Details_Partial.cshtml" />
+    <Content Include="Views\ExpenseCategories\Create.cshtml" />
+    <Content Include="Views\ExpenseCategories\ShowAll.cshtml" />
+    <Content Include="Views\ExpenseItems\Create.cshtml" />
+    <Content Include="Views\ExpenseItems\Update.cshtml" />
+    <Content Include="Views\ExpenseItems\ShowAll.cshtml" />
+    <Content Include="Views\Organizations\Create.cshtml" />
+    <Content Include="Views\Organizations\Update.cshtml" />
+    <Content Include="Views\Organizations\ShowAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7520,14 +7570,20 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801080638547_InitialCreate.resx">
-      <DependentUpon>201801080638547_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801141519073_Initial_Create.resx">
+      <DependentUpon>201801141519073_Initial_Create.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801081924451_Item_Category_Model_Added.resx">
-      <DependentUpon>201801081924451_Item_Category_Model_Added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801142042152_Item_And_ItemCategory_DataAnnotation_Added.resx">
+      <DependentUpon>201801142042152_Item_And_ItemCategory_DataAnnotation_Added.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801131829001_ItemCategory_IsDeleted_Added.resx">
-      <DependentUpon>201801131829001_ItemCategory_IsDeleted_Added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801161006202_Expense_Category_And_Item_Addedd.resx">
+      <DependentUpon>201801161006202_Expense_Category_And_Item_Addedd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801171802019_Organization_And_Outlet_Model_Added.resx">
+      <DependentUpon>201801171802019_Organization_And_Outlet_Model_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801172000240_Organization_And_Outlet_IsDeleted_Added.resx">
+      <DependentUpon>201801172000240_Organization_And_Outlet_IsDeleted_Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
