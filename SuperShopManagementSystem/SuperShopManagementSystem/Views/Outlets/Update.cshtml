@@ -1,0 +1,96 @@
+﻿@model SuperShopManagementSystem.Models.Outlet
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="text-center">Update An Outlet</h2>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        @using (Html.BeginForm("Update", "Outlets", FormMethod.Post, new { id = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                @if (ViewBag.Msg != null)
+                                {
+                                    <div class="text-center col-md-offset-3 SuccessMsg">@ViewBag.Msg</div>
+                                    <br />
+                                }
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.OrganizationId, "Organization", htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownList("OrganizationId", ViewBag.OutletCategoryId as SelectList, "---Select Organization---", htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.OrganizationId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        <div class="text-danger" id="ErrorMsg"></div>
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                                        @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" value="Update" class="btn btn-block btn-success btn-lg" />
+                                    </div>
+                                </div>
+
+                                @Html.Hidden("CurrentOrganizationName", Model.OrganizationId)
+                                @Html.Hidden("CurrentOutletName", Model.Name)
+                                @Html.HiddenFor(model => model.IsDeleted)
+                            </div>
+                        }
+
+                        <div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/ProjectScript/Outlet/Update_Outlet.js"></script>
+}

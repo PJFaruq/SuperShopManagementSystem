@@ -1,0 +1,61 @@
+﻿@model SuperShopManagementSystem.Models.Party
+
+<div class="col-md-3">
+    @{
+        string imageBase64 = Convert.ToBase64String(Model.Image);
+        string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+    }
+    <img src="@imageSrc" width="270" height="230" class="Thumbnail" />
+</div>
+<div class="col-md-8 col-md-offset-1">
+    <dl class="dl-horizontal" style="font-size:18px">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+    </dl>
+</div>

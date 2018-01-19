@@ -78,7 +78,7 @@ namespace SuperShopManagementSystem.DAL
 
         internal List<ItemCategory> GetParentCategories()
         {
-            List<ItemCategory> listOfItemCategory = db.ItemCategories.ToList();
+            List<ItemCategory> listOfItemCategory = db.ItemCategories.Where(model=>model.IsDeleted==false).ToList();
             return listOfItemCategory;
         }
     }

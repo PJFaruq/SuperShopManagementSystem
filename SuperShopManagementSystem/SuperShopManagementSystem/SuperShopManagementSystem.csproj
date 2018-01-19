@@ -151,23 +151,32 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BLL\DropDownBLL.cs" />
+    <Compile Include="BLL\EmployeeBLL.cs" />
     <Compile Include="BLL\ExpenseCategoryBLL.cs" />
     <Compile Include="BLL\ExpenseItemBLL.cs" />
     <Compile Include="BLL\ItemBLL.cs" />
     <Compile Include="BLL\ItemCategoryBLL.cs" />
     <Compile Include="BLL\OrganizationBLL.cs" />
+    <Compile Include="BLL\OutletBLL.cs" />
+    <Compile Include="BLL\PartyBLL.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ExpenseCategoriesController.cs" />
     <Compile Include="Controllers\ExpenseItemsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemCategoriesController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
+    <Compile Include="Controllers\OutletsController.cs" />
+    <Compile Include="Controllers\PartiesController.cs" />
     <Compile Include="DAL\DropDownDAL.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\ExpenseCategoryDAL.cs" />
     <Compile Include="DAL\ExpenseItemDAL.cs" />
     <Compile Include="DAL\ItemCategoryDAL.cs" />
     <Compile Include="DAL\ItemDAL.cs" />
     <Compile Include="DAL\OrganizationDAL.cs" />
+    <Compile Include="DAL\OutletDAL.cs" />
+    <Compile Include="DAL\PartyDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,10 +200,19 @@
     <Compile Include="Migrations\201801172000240_Organization_And_Outlet_IsDeleted_Added.Designer.cs">
       <DependentUpon>201801172000240_Organization_And_Outlet_IsDeleted_Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801181830408_Party_Model_Added.cs" />
+    <Compile Include="Migrations\201801181830408_Party_Model_Added.Designer.cs">
+      <DependentUpon>201801181830408_Party_Model_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801190919254_Employee_Model_Added.cs" />
+    <Compile Include="Migrations\201801190919254_Employee_Model_Added.Designer.cs">
+      <DependentUpon>201801190919254_Employee_Model_Added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\DatabaseContex\SuperShopDbContext.cs" />
     <Compile Include="Models\DropDownList.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\ExpenseCategory.cs" />
     <Compile Include="Models\ExpenseItem.cs" />
     <Compile Include="Models\Item.cs" />
@@ -207,6 +225,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ProjectStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -238,6 +257,12 @@
     <Content Include="Scripts\ProjectScript\Organization\Create_Organization.js" />
     <Content Include="Scripts\ProjectScript\Organization\ShowAll_Organization.js" />
     <Content Include="Scripts\ProjectScript\Organization\Update_Organization.js" />
+    <Content Include="Scripts\ProjectScript\Outlet\Create_Outlet.js" />
+    <Content Include="Scripts\ProjectScript\Outlet\ShowAll_Outlet.js" />
+    <Content Include="Scripts\ProjectScript\Outlet\Update_Outlet.js" />
+    <Content Include="Scripts\ProjectScript\Party\Create_Party.js" />
+    <Content Include="Scripts\ProjectScript\Party\ShowAll_Party.js" />
+    <Content Include="Scripts\ProjectScript\Party\Update_Party.js" />
     <Content Include="Scripts\ProjectScript\Project.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -7549,6 +7574,14 @@
     <Content Include="Views\Organizations\Create.cshtml" />
     <Content Include="Views\Organizations\Update.cshtml" />
     <Content Include="Views\Organizations\ShowAll.cshtml" />
+    <Content Include="Views\Outlets\Create.cshtml" />
+    <Content Include="Views\Outlets\Update.cshtml" />
+    <Content Include="Views\Outlets\ShowAll.cshtml" />
+    <Content Include="Views\Parties\Create.cshtml" />
+    <Content Include="Views\Parties\Update.cshtml" />
+    <Content Include="Views\Parties\ShowAll.cshtml" />
+    <Content Include="Views\Parties\Details_Partial.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7584,6 +7617,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801172000240_Organization_And_Outlet_IsDeleted_Added.resx">
       <DependentUpon>201801172000240_Organization_And_Outlet_IsDeleted_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801181830408_Party_Model_Added.resx">
+      <DependentUpon>201801181830408_Party_Model_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801190919254_Employee_Model_Added.resx">
+      <DependentUpon>201801190919254_Employee_Model_Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

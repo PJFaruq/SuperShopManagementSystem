@@ -34,5 +34,8 @@ namespace SuperShopManagementSystem.Models
         [Required(ErrorMessage ="Party type is required")]
         public string Type { get; set; }
 
+        [Required]
+        public bool IsDeleted { get; set; }
+
     }
 }

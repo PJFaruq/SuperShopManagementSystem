@@ -29,6 +29,24 @@ namespace SuperShopManagementSystem.BLL
             return selectListOfExpenseCategory;
         }
 
+        internal SelectList GetAllOutlet()
+        {
+            SelectList selectListOfOutlet = dropDownDal.GetAllOutlet();
+            return selectListOfOutlet;
+        }
+
+        internal SelectList GetAllEmployee()
+        {
+            SelectList selectListOfEmployee = dropDownDal.GetAllEmployee();
+            return selectListOfEmployee;
+        }
+
+        internal SelectList GetAllOrganization()
+        {
+            SelectList listOfOrganization = dropDownDal.GetAllOrganization();
+            return listOfOrganization;
+        }
+
         internal SelectList GetAllExpenseCategoryById(int? id)
         {
             SelectList selectListOfExpenseCategory = dropDownDal.GetAllExpenseCategoryById(id);

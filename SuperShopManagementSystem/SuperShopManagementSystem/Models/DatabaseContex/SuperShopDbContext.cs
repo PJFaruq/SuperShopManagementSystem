@@ -14,5 +14,7 @@ namespace SuperShopManagementSystem.Models.DatabaseContex
         public DbSet<ExpenseItem> ExpenseItems { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Outlet> Outlets { get; set; }
+        public DbSet<Party> Parties { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }

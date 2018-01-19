@@ -21,7 +21,25 @@ namespace SuperShopManagementSystem.Models
             return selectListOfItemCategory;
         }
 
-        internal dynamic GetAllExpenseCategory()
+        public SelectList GetAllOutlet()
+        {
+            SelectList selectListOfOutlet = dropDownbll.GetAllOutlet();
+            return selectListOfOutlet;
+        }
+
+        public SelectList GetAllEmployee()
+        {
+            SelectList selectListOfEmployee = dropDownbll.GetAllEmployee();
+            return selectListOfEmployee;
+        }
+
+        internal SelectList GetAllOrganization()
+        {
+            SelectList listOfOrganization = dropDownbll.GetAllOrganization();
+            return listOfOrganization;
+        }
+
+        internal SelectList GetAllExpenseCategory()
         {
             SelectList selectListOfExpenseCategory = dropDownbll.GetAllExpenseCategory();
             return selectListOfExpenseCategory;

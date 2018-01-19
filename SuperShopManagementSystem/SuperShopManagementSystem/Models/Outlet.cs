@@ -32,7 +32,8 @@ namespace SuperShopManagementSystem.Models
         [Required(ErrorMessage ="Please Select an Organization")]
         public virtual int OrganizationId { get; set; }
 
-
         public virtual Organization Organization { get; set; }
+
+        public virtual List<Employee> Employees { get; set; }
     }
 }
