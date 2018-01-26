@@ -1,0 +1,102 @@
+﻿@model SuperShopManagementSystem.Models.ViewModel.PurchaseResultVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Purchase Result</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="col-md-12">
+                            <div style="text-align:right">
+                                <div class="h4">Extreme BD</div>
+                                Extreme BD Super Shop
+                                <div>Contact No. 01767111351</div>
+                                <div>Sukrabad, Dhaka 1207</div>
+                                <div>Bangladesh</div><br />
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <code class="h2" style="font-family:'Agency FB'">PURCHASE RESULT</code>
+                        </div>
+                        <div class="col-md-12">
+                            <div style="height:2px;background-color:#00ffff"></div>
+                        </div>
+                        <br />
+                        <div class="col-xs-12">
+
+                            <div class="col-xs-6">
+                                <strong>Purchase No: </strong> @Html.DisplayFor(model => model.PurchaseNo)<br />
+                                <strong>Purchase Date: </strong> @Html.DisplayFor(model => model.PurchaseDate)<br />
+                                <strong>Supplier: </strong> @Html.DisplayFor(model => model.Supplier)<br />
+                            </div>
+                            <div class="col-xs-6">
+                                <strong>Outlet: </strong> @Html.DisplayFor(model => model.Outlet)<br />
+                                <strong>Purchase By: </strong> @Html.DisplayFor(model => model.PurchaseBy)<br />
+                                <strong>Remarks: </strong> @Html.DisplayFor(model => model.Remarks)<br />
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+
+                        <div class="col-xs-12">
+                            <br />
+                        </div>
+                        <div class="col-xs-12">
+                            <br />
+                            <table class="table table-responsive table-condensed table-striped table-bordered">
+
+                                <thead style="background-color:#99ad18;font-weight:bold">
+                                    <tr>
+                                        <td>SL</td>
+                                        <td>Item Name</td>
+                                        <td>Price</td>
+                                        <td>Quantity</td>
+                                        <td>Total Item Price</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{int count = 0; }
+                                    @if (Model.PurchaseDetails != null)
+                                    {
+                                        foreach (var item in Model.PurchaseDetails)
+                                        {
+                                            <tr>
+                                                @{count++; }
+                                                <td>@count</td>
+                                                <td>@item.Item.Name</td>
+                                                <td>@item.Price</td>
+                                                <td>@item.Quantity</td>
+                                                <td>@item.Total</td>
+                                            </tr>
+                                        }
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

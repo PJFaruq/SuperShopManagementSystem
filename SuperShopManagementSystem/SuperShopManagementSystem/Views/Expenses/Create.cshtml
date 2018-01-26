@@ -1,0 +1,158 @@
+﻿@model SuperShopManagementSystem.Models.Operation.Expense
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Add Expense
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.Label("Item")
+                    @Html.DropDownList("ItemId", ViewBag.ItemId as SelectList, "---Select One---", new { @class = "form-control" })
+                    <div id="ErrorMsgForItem" style="color:red"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+
+                    @Html.Label("Quantity")
+                    @Html.TextBox("Quantity", null, new { @class = "form-control" })
+                    <div id="ErrorMsgForQuantity" style="color:red"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.Label("Price")
+                    @Html.TextBox("ItemPrice", null, new { @class = "form-control" })
+                    <div id="ErrorMsgForItemPrice" style="color:red"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                @Html.Label("Reason")
+                @Html.TextArea("Reason", null, new { @class = "form-control" })
+                <div id="ErrorMsgForReason" class="text-center" style="color:red"></div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="form-group">
+
+                    <input type="submit" id="btnAdd" value="Add" class="btn btn-success btn-block" />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Expense List
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered table-condensed table-responsive table-hover ">
+            <thead style="background-color:#80b107;color:white;">
+                <tr>
+                    <td>Item</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Line Total</td>
+                    <td>Reason</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody id="ExpenseItemList"></tbody>
+        </table>
+    </div>
+
+</div>
+
+
+@using (Html.BeginForm("Create", "Expenses", FormMethod.Post, new { id = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Expense Information
+        </div>
+        <div class="panel-body">
+            <h3 id="ErrorForTableRow" class="text-danger text-center"></h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OutletId, "Outlet", htmlAttributes: new { })
+                            <div>
+                                @Html.DropDownList("OutletId", ViewBag.OutletId as SelectList, "---Select Outlet---", htmlAttributes: new { @class = "form-control" })
+                                <div id="ErrorForOutlet" class="text-danger"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EmployeeId, "Employee", htmlAttributes: new { })
+                            <div>
+                                @Html.DropDownList("EmployeeId", ViewBag.EmployeeId as SelectList, "---Select Employee---", htmlAttributes: new { @class = "form-control" })
+                                <div id="ErrorForEmployee" class="text-danger"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Date, htmlAttributes: new { })
+                        <div>
+                            @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", placeholder = "Select a Date" } })
+                            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Total, htmlAttributes: new { })
+                        <div>
+                            @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                            @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Due, htmlAttributes: new { })
+                        <div>
+                            @Html.EditorFor(model => model.Due, new { htmlAttributes = new { @class = "form-control", placeholder = "Due Amount" } })
+                            @Html.ValidationMessageFor(model => model.Due, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="form-group">
+
+                        <input type="submit" id="btnSubmit" value="Save" class="btn btn-success btn-block btn-lg" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="bindValue"></div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ProjectScript/Expense/Create_Expense.js"></script>
+}
+
+

@@ -1,0 +1,92 @@
+﻿@model SuperShopManagementSystem.Models.ViewModel.SalesReceipt_ViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="col-md-12">
+                @Html.ActionLink("Download Pdf", "SalesReceiptPdf", new { id = Model.SalesNo }, new { @class = "btn btn-success" })
+                <div style="text-align:right">
+                    <div class="h4">Extreme BD</div>
+                    Extreme BD Super Shop
+                    <div>Contact No. 01767111351</div>
+                    <div>Sukrabad, Dhaka 1207</div>
+                    <div>Bangladesh</div><br />
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <code class="h2" style="font-family:'Agency FB'">SALES RECEIPT</code>
+            </div>
+            <div class="col-md-12">
+                <div style="height:2px;background-color:#00ffff"></div>
+            </div>
+            <br />
+            <div class="col-md-12">
+                <br />
+                <div class="col-md-4">
+                    <strong>Sales No: </strong> @Html.DisplayFor(model => model.SalesNo)<br />
+                    <strong>Sales Date: </strong> @Html.DisplayFor(model => model.SalesDate)<br />
+                </div>
+                <div class="col-md-4">
+                    <strong>Customer Name: </strong> @Html.DisplayFor(model => model.CustomerName)<br />
+                    <strong>Contact: </strong> @Html.DisplayFor(model => model.ContactNo)<br />
+                </div>
+                <div class="col-md-4">
+                    <strong>Outlet: </strong> @Html.DisplayFor(model => model.Outlet)<br />
+                    <strong>Sold By: </strong> @Html.DisplayFor(model => model.SoldBy)<br />
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <br />
+                <table class="table table-responsive table-condensed table-striped table-bordered">
+                    <thead style="background-color:#99ad18;font-weight:bold">
+                        <tr>
+                            <td>SL</td>
+                            <td>Item Name</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Total Item Price</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{int count = 0; }
+                        @if (Model.SalesDetails != null)
+                        {
+                            foreach (var item in Model.SalesDetails)
+                            {
+                                <tr>
+                                    @{count++; }
+                                    <td>@count</td>
+                                    <td>@item.Item.Name</td>
+                                    <td>@item.Price</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.Total</td>
+                                </tr>
+                            }
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <div class=" col-md-4 col-md-offset-8">
+                    <strong>Total Price: </strong> @Html.DisplayFor(model => model.TotalPrice)<br />
+                    <strong>VAT: </strong> @Html.DisplayFor(model => model.VAT) %<br />
+                    <strong>Discount: </strong> @Html.DisplayFor(model => model.Discount)<br />
+                    <div style="height:2px;background-color:#00ffff"></div>
+                    <strong>Grand Total: </strong> @Html.DisplayFor(model => model.GrandTotal)<br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

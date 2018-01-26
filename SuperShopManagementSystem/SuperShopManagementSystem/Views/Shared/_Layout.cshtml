@@ -26,6 +26,7 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" href="~/Themes/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="~/Themes/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link href="~/Content/ProjectStyle.css" rel="stylesheet" />
     @RenderSection("styles", required: false)
 </head>
@@ -231,7 +232,7 @@
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="@Url.Action("Create","ItemCategories")"><i class="fa fa-circle-o text-red"></i>Add Item Category</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>List of All Item Category</a></li>
+                                    <li><a href="@Url.Action("ShowAll","ItemCategories")"><i class="fa fa-circle-o text-red"></i>List of All Item Category</a></li>
                                 </ul>
                             </li>
 
@@ -243,8 +244,8 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>Add Item</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>List of All Item</a></li>
+                                    <li><a href="@Url.Action("Create","Items")"><i class="fa fa-circle-o text-red"></i>Add Item</a></li>
+                                    <li><a href="@Url.Action("ShowAll","Items")"><i class="fa fa-circle-o text-red"></i>List of All Item</a></li>
                                 </ul>
                             </li>
 
@@ -256,8 +257,8 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>Add Expense Category</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>List of All Expense Category</a></li>
+                                    <li><a href="@Url.Action("Create","ExpenseCategories")"><i class="fa fa-circle-o text-red"></i>Add Expense Category</a></li>
+                                    <li><a href="@Url.Action("ShowAll","ExpenseCategories")"><i class="fa fa-circle-o text-red"></i>List of All Expense Category</a></li>
                                 </ul>
                             </li>
 
@@ -269,8 +270,8 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>Add Expense Item</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>List of All Expense Item</a></li>
+                                    <li><a href="@Url.Action("Create","ExpenseItems")"><i class="fa fa-circle-o text-red"></i>Add Expense Item</a></li>
+                                    <li><a href="@Url.Action("Create","ItemCategories")"><i class="fa fa-circle-o text-red"></i>List of All Expense Item</a></li>
                                 </ul>
                             </li>
 
@@ -617,7 +618,8 @@
 
     <script src="~/Themes/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="~/Themes/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-
+    <!-- bootstrap datepicker -->
+    <script src="~/Themes/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="~/Scripts/ProjectScript/Project.js"></script>
     @RenderSection("scripts", required: false)
 

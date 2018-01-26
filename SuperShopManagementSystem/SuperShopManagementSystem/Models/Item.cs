@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperShopManagementSystem.Models.Operation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -39,10 +40,11 @@ namespace SuperShopManagementSystem.Models
 
         [Required(ErrorMessage ="Select an Item Category")]
         [Display(Name = "Category")]
-        public virtual int ItemCategoryId { get; set; }
-
-                           
+        public virtual int ItemCategoryId { get; set; }                  
         public virtual ItemCategory ItemCategory { get; set; }
+        public virtual List<PurchaseDetail> PurchaseDetails { get; set; }
+        public virtual List<SalesDetail > SalesDetail { get; set; }
+        public virtual List<ExpenseDetail> ExpenseDetails { get; set; }
 
     }
 }

@@ -23,6 +23,18 @@ namespace SuperShopManagementSystem.BLL
             return selectListOfItemCategory;
         }
 
+        internal SelectList GetAllItem()
+        {
+            SelectList selectListOfItem = dropDownDal.GetAllItem();
+            return selectListOfItem;
+        }
+
+        internal SelectList GetAllExpenseItem()
+        {
+            SelectList selectListOfItem = dropDownDal.GetAllExpenseItem();
+            return selectListOfItem;
+        }
+
         internal SelectList GetAllExpenseCategory()
         {
             SelectList selectListOfExpenseCategory = dropDownDal.GetAllExpenseCategory();
@@ -51,6 +63,13 @@ namespace SuperShopManagementSystem.BLL
         {
             SelectList selectListOfExpenseCategory = dropDownDal.GetAllExpenseCategoryById(id);
             return selectListOfExpenseCategory;
+        }
+
+
+        internal SelectList GetAllSupplier()
+        {
+            SelectList selectListOfSupplier = dropDownDal.GetAllSupplier();
+            return selectListOfSupplier;
         }
     }
 }

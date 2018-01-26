@@ -27,6 +27,16 @@ namespace SuperShopManagementSystem.DAL
             return new SelectList(db.ExpenseCategories.Where(model => model.IsDeleted == false), "Id", "Name");
         }
 
+        internal SelectList GetAllItem()
+        {
+            return new SelectList(db.Items.Where(model => model.IsDeleted == false && model.ItemCategory.IsDeleted==false), "Id", "Name");
+        }
+
+        internal SelectList GetAllExpenseItem()
+        {
+            return new SelectList(db.ExpenseItems.Where(model => model.IsDeleted == false && model.ExpenseCategory.IsDeleted == false), "Id", "Name");
+        }
+
         internal SelectList GetAllExpenseCategoryById(int? id)
         {
             ExpenseItem expenseItem = db.ExpenseItems.Find(id);
@@ -46,6 +56,11 @@ namespace SuperShopManagementSystem.DAL
         internal SelectList GetAllOrganization()
         {
             return new SelectList(db.Organizations.Where(model => model.IsDeleted == false), "Id", "Name");
+        }
+
+        internal SelectList GetAllSupplier()
+        {
+            return new SelectList(db.Parties.Where(model => model.Type == "Supplier" && model.IsDeleted == false),"Id","Name");
         }
     }
 }

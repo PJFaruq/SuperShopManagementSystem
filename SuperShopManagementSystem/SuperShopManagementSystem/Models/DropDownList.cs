@@ -15,6 +15,19 @@ namespace SuperShopManagementSystem.Models
             SelectList selectListOfItemCategory = dropDownbll.GetAllItemCategory();
             return selectListOfItemCategory;
         }
+
+        public SelectList GetAllItem()
+        {
+            SelectList selectListOfItem = dropDownbll.GetAllItem();
+            return selectListOfItem;
+        }
+
+        internal SelectList GetAllExpenseItem()
+        {
+            SelectList selectListOfItem = dropDownbll.GetAllExpenseItem();
+            return selectListOfItem;
+        }
+
         public SelectList GetAllItemCategoryById(int?id)
         {
             SelectList selectListOfItemCategory = dropDownbll.GetAllItemCategoryById(id);
@@ -49,6 +62,12 @@ namespace SuperShopManagementSystem.Models
         {
             SelectList selectListOfExpenseCategory = dropDownbll.GetAllExpenseCategoryById(id);
             return selectListOfExpenseCategory;
+        }
+
+        public SelectList GetAllSupplier()
+        {
+            SelectList selectlistOfSupplier = dropDownbll.GetAllSupplier();
+            return selectlistOfSupplier;
         }
     }
 }

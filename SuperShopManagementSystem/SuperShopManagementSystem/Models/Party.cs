@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperShopManagementSystem.Models.Operation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -36,6 +37,8 @@ namespace SuperShopManagementSystem.Models
 
         [Required]
         public bool IsDeleted { get; set; }
+
+        public virtual List<Purchase> Purchases { get; set; }
 
     }
 }

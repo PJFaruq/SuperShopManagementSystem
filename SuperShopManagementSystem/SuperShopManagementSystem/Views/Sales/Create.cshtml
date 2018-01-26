@@ -1,0 +1,193 @@
+﻿@model SuperShopManagementSystem.Models.Operation.Sales
+
+@{
+
+                ViewBag.Title = "Create";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Add Sales Item
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.Label("Item")
+                    @Html.DropDownList("ItemId", ViewBag.ItemId as SelectList, "---Select One---", new { @class = "form-control" })
+                    <div id="ErrorMsgForItem" style="color:red"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+
+                    @Html.Label("Quantity")
+                    @Html.TextBox("Quantity", null, new { @class = "form-control" })
+                    <div id="ErrorMsgForQuantity" style="color:red"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.Label("Price")
+                    @Html.TextBox("ItemPrice", null, new { @class = "form-control", disabled = true })
+                    <div id="ErrorMsgForItemPrice" class="text-center" style="color:red"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                @Html.Label("Stock")
+                @Html.TextBox("Stock", null, new { @class = "form-control", disabled = true })
+                <div id="ErrorMsgForStock" class="text-center" style="color:red"></div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="form-group">
+
+                    <input type="submit" id="btnAdd" value="Add" class="btn btn-success btn-block" />
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Sales Item List
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered table-condensed table-responsive table-hover ">
+            <thead>
+                <tr>
+                    <td>Item</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Total</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody id="SalesItemList"></tbody>
+        </table>
+    </div>
+
+</div>
+
+
+@using (Html.BeginForm("Create","Sales",FormMethod.Post,new {id="form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Sales Information
+        </div>
+        <div class="panel-body">
+            <h3 id="ErrorForTableRow" class="text-danger text-center"></h3>
+            <div class="row">
+                <div class="col-md-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OutletId, "OutletId", htmlAttributes: new {  })
+                            <div>
+                                @Html.DropDownList("OutletId", ViewBag.OutletId as SelectList, "---Select Outlet---", htmlAttributes: new { @class = "form-control" })
+                                <div id="ErrorForOutlet" class="text-danger"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EmployeeId, "Employee", htmlAttributes: new { })
+                            <div>
+                                @Html.DropDownList("EmployeeId", ViewBag.EmployeeId as SelectList, htmlAttributes: new { @class = "form-control" })
+                                <div id="ErrorMsgForEmployee" class="text-danger"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SalesDate, htmlAttributes: new {  })
+                            <div >
+                                @Html.EditorFor(model => model.SalesDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Select Sales Date" } })
+                                @Html.ValidationMessageFor(model => model.SalesDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerName, htmlAttributes: new { })
+                        <div>
+                            @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @class = "form-control", placeholder = "Employee Name" } })
+                            @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CustomerContact, htmlAttributes: new { })
+                        <div>
+                            @Html.EditorFor(model => model.CustomerContact, new { htmlAttributes = new { @class = "form-control", placeholder = "Customer Contact No." } })
+                            @Html.ValidationMessageFor(model => model.CustomerContact, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.SubTotal, htmlAttributes: new { })
+                        <div>
+                            @Html.EditorFor(model => model.SubTotal, new { htmlAttributes = new { @class = "form-control", placeholder = "Sub Total Amount",@readonly=true } })
+                            @Html.ValidationMessageFor(model => model.SubTotal, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.VAT,"VAT(%)", htmlAttributes: new { })
+                        <div>
+                            @Html.EditorFor(model => model.VAT, new { htmlAttributes = new { @class = "form-control", placeholder = "% VAT", @Value = "0" } })
+                            @Html.ValidationMessageFor(model => model.VAT, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Discount, htmlAttributes: new { })
+                        <div>
+                            @Html.TextBoxFor(model=>model.Discount,new { @class = "form-control", placeholder = "Discount Amount", @Value="0" })
+                            @Html.ValidationMessageFor(model => model.Discount, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Total, htmlAttributes: new {  })
+                        <div>
+                            @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control", placeholder = "Total Amount", @readonly = true } })
+                            @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AmountDue, htmlAttributes: new {  })
+                        <div>
+                            @Html.EditorFor(model => model.AmountDue, new { htmlAttributes = new { @class = "form-control", placeholder = "Due Amount", @Value = "0" } })
+                            @Html.ValidationMessageFor(model => model.AmountDue, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="form-group">
+                        
+                            <input type="submit" id="btnSubmit" value="Save" class="btn btn-success btn-block btn-lg" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="bindValue"></div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ProjectScript/Sales/Create_Sales.js"></script>
+}

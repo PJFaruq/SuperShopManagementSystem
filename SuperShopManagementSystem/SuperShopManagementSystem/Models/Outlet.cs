@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperShopManagementSystem.Models.Operation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -35,5 +36,10 @@ namespace SuperShopManagementSystem.Models
         public virtual Organization Organization { get; set; }
 
         public virtual List<Employee> Employees { get; set; }
+
+        public virtual List<Purchase> Purchases { get; set; }
+
+        public virtual List<Sales> Saleses { get; set; }
+        public virtual List<Expense> Expenses { get; set; }
     }
 }

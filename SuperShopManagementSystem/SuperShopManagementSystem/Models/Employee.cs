@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperShopManagementSystem.Models.Operation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -62,6 +63,11 @@ namespace SuperShopManagementSystem.Models
         [Required(ErrorMessage ="Outlet Required")]
         public virtual int OutletId { get; set; }
         public virtual Outlet Outlet { get; set; }
+
+        public virtual List<Purchase> Purchases { get; set; }
+        public virtual List<Sales> Sales { get; set; }
+
+        public virtual List<Expense> Expenses { get; set; }
 
     }
 }

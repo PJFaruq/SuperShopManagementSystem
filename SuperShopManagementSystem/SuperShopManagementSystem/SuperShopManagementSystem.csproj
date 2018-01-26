@@ -58,6 +58,9 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -150,8 +153,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\CommonBLL.cs" />
     <Compile Include="BLL\DropDownBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
+    <Compile Include="BLL\ExpenseBLL.cs" />
     <Compile Include="BLL\ExpenseCategoryBLL.cs" />
     <Compile Include="BLL\ExpenseItemBLL.cs" />
     <Compile Include="BLL\ItemBLL.cs" />
@@ -159,24 +164,33 @@
     <Compile Include="BLL\OrganizationBLL.cs" />
     <Compile Include="BLL\OutletBLL.cs" />
     <Compile Include="BLL\PartyBLL.cs" />
+    <Compile Include="BLL\PurchaseBLL.cs" />
+    <Compile Include="BLL\SalesBLL.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ExpenseCategoriesController.cs" />
     <Compile Include="Controllers\ExpenseItemsController.cs" />
+    <Compile Include="Controllers\ExpensesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemCategoriesController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
     <Compile Include="Controllers\OutletsController.cs" />
     <Compile Include="Controllers\PartiesController.cs" />
+    <Compile Include="Controllers\PurchasesController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="DAL\CommonDAL.cs" />
     <Compile Include="DAL\DropDownDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\ExpenseCategoryDAL.cs" />
+    <Compile Include="DAL\ExpenseDAL.cs" />
     <Compile Include="DAL\ExpenseItemDAL.cs" />
     <Compile Include="DAL\ItemCategoryDAL.cs" />
     <Compile Include="DAL\ItemDAL.cs" />
     <Compile Include="DAL\OrganizationDAL.cs" />
     <Compile Include="DAL\OutletDAL.cs" />
     <Compile Include="DAL\PartyDAL.cs" />
+    <Compile Include="DAL\PurchaseDAL.cs" />
+    <Compile Include="DAL\SalesDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,6 +222,42 @@
     <Compile Include="Migrations\201801190919254_Employee_Model_Added.Designer.cs">
       <DependentUpon>201801190919254_Employee_Model_Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801202032585_Purchase_And_PurchaseDetail_Added.cs" />
+    <Compile Include="Migrations\201801202032585_Purchase_And_PurchaseDetail_Added.Designer.cs">
+      <DependentUpon>201801202032585_Purchase_And_PurchaseDetail_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801202045110_Add_Relation_Between_Purchase_And_PurchaseDetail.cs" />
+    <Compile Include="Migrations\201801202045110_Add_Relation_Between_Purchase_And_PurchaseDetail.Designer.cs">
+      <DependentUpon>201801202045110_Add_Relation_Between_Purchase_And_PurchaseDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221109344_Sales_And_SalesDetail_Added.cs" />
+    <Compile Include="Migrations\201801221109344_Sales_And_SalesDetail_Added.Designer.cs">
+      <DependentUpon>201801221109344_Sales_And_SalesDetail_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801231700437_Sales_VM_Added.cs" />
+    <Compile Include="Migrations\201801231700437_Sales_VM_Added.Designer.cs">
+      <DependentUpon>201801231700437_Sales_VM_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801240101171_PurchaseResultVM_Added.cs" />
+    <Compile Include="Migrations\201801240101171_PurchaseResultVM_Added.Designer.cs">
+      <DependentUpon>201801240101171_PurchaseResultVM_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801240121265_Purchase_And_PurchaseDetail_Relation.cs" />
+    <Compile Include="Migrations\201801240121265_Purchase_And_PurchaseDetail_Relation.Designer.cs">
+      <DependentUpon>201801240121265_Purchase_And_PurchaseDetail_Relation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801241354322_Expense_And_ExpenseDetail_Added.cs" />
+    <Compile Include="Migrations\201801241354322_Expense_And_ExpenseDetail_Added.Designer.cs">
+      <DependentUpon>201801241354322_Expense_And_ExpenseDetail_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801241859046_ExpenseResultVM_Added.cs" />
+    <Compile Include="Migrations\201801241859046_ExpenseResultVM_Added.Designer.cs">
+      <DependentUpon>201801241859046_ExpenseResultVM_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801241910427_Expense_And_ExpenseDetail_Relation_Added.cs" />
+    <Compile Include="Migrations\201801241910427_Expense_And_ExpenseDetail_Relation_Added.Designer.cs">
+      <DependentUpon>201801241910427_Expense_And_ExpenseDetail_Relation_Added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\DatabaseContex\SuperShopDbContext.cs" />
@@ -217,28 +267,87 @@
     <Compile Include="Models\ExpenseItem.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemCategory.cs" />
+    <Compile Include="Models\Operation\Expense.cs" />
+    <Compile Include="Models\Operation\ExpenseDetail.cs" />
+    <Compile Include="Models\Operation\Purchase.cs" />
+    <Compile Include="Models\Operation\PurchaseDetail.cs" />
+    <Compile Include="Models\Operation\Sales.cs" />
+    <Compile Include="Models\Operation\SalesDetail.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Outlet.cs" />
     <Compile Include="Models\Party.cs" />
+    <Compile Include="Models\ViewModel\ExpenseResultVM.cs" />
+    <Compile Include="Models\ViewModel\PurchaseResultVM.cs" />
+    <Compile Include="Models\ViewModel\PurchaseSearchVM.cs" />
+    <Compile Include="Models\ViewModel\SalesReceipt_ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ProjectStyle.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="App_Browsers\qt.browser" />
+    <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -248,6 +357,7 @@
     <Content Include="Scripts\ProjectScript\ExpenseItem\Create_ExpenseItem.js" />
     <Content Include="Scripts\ProjectScript\ExpenseItem\ShowAll_ExpenseItem.js" />
     <Content Include="Scripts\ProjectScript\ExpenseItem\Update_ExpenseItem.js" />
+    <Content Include="Scripts\ProjectScript\Expense\Create_Expense.js" />
     <Content Include="Scripts\ProjectScript\ItemCategory\ItemCategories_Update.js" />
     <Content Include="Scripts\ProjectScript\ItemCategory\ItemCategory_Create.js" />
     <Content Include="Scripts\ProjectScript\ItemCategory\ItemCategory_ShowAll.js" />
@@ -264,6 +374,8 @@
     <Content Include="Scripts\ProjectScript\Party\ShowAll_Party.js" />
     <Content Include="Scripts\ProjectScript\Party\Update_Party.js" />
     <Content Include="Scripts\ProjectScript\Project.js" />
+    <Content Include="Scripts\ProjectScript\Purchase\Create_Purchase.js" />
+    <Content Include="Scripts\ProjectScript\Sales\Create_Sales.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Themes\.gitignore" />
@@ -7582,6 +7694,20 @@
     <Content Include="Views\Parties\ShowAll.cshtml" />
     <Content Include="Views\Parties\Details_Partial.cshtml" />
     <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Purchases\Create.cshtml" />
+    <Content Include="Views\Sales\Create.cshtml" />
+    <Content Include="Views\Sales\SalesReceipt.cshtml" />
+    <Content Include="Views\Sales\ShowAll.cshtml" />
+    <Content Include="Views\Sales\Details.cshtml" />
+    <Content Include="Views\Purchases\PurchaseResult.cshtml" />
+    <Content Include="Views\Purchases\ShowAll.cshtml" />
+    <Content Include="Views\Purchases\Details.cshtml" />
+    <Content Include="Views\Expenses\Create.cshtml" />
+    <Content Include="Views\Expenses\ExpenseResult.cshtml" />
+    <Content Include="Views\Expenses\Details.cshtml" />
+    <Content Include="Views\Expenses\ShowAll.cshtml" />
+    <Content Include="Views\Purchases\PurchaseReport.cshtml" />
+    <Content Include="Views\Purchases\PurchaseReport_Partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7597,7 +7723,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -7623,6 +7748,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801190919254_Employee_Model_Added.resx">
       <DependentUpon>201801190919254_Employee_Model_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801202032585_Purchase_And_PurchaseDetail_Added.resx">
+      <DependentUpon>201801202032585_Purchase_And_PurchaseDetail_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801202045110_Add_Relation_Between_Purchase_And_PurchaseDetail.resx">
+      <DependentUpon>201801202045110_Add_Relation_Between_Purchase_And_PurchaseDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221109344_Sales_And_SalesDetail_Added.resx">
+      <DependentUpon>201801221109344_Sales_And_SalesDetail_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801231700437_Sales_VM_Added.resx">
+      <DependentUpon>201801231700437_Sales_VM_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801240101171_PurchaseResultVM_Added.resx">
+      <DependentUpon>201801240101171_PurchaseResultVM_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801240121265_Purchase_And_PurchaseDetail_Relation.resx">
+      <DependentUpon>201801240121265_Purchase_And_PurchaseDetail_Relation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801241354322_Expense_And_ExpenseDetail_Added.resx">
+      <DependentUpon>201801241354322_Expense_And_ExpenseDetail_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801241859046_ExpenseResultVM_Added.resx">
+      <DependentUpon>201801241859046_ExpenseResultVM_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801241910427_Expense_And_ExpenseDetail_Relation_Added.resx">
+      <DependentUpon>201801241910427_Expense_And_ExpenseDetail_Relation_Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

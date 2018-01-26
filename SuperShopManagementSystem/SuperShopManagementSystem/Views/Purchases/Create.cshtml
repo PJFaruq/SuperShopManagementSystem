@@ -1,0 +1,161 @@
+﻿@model SuperShopManagementSystem.Models.Operation.Purchase
+
+@{
+               ViewBag.Title = "Create";
+}
+<div class="text-center SuccessMsg">@ViewBag.SuccessMsg</div><br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Add Purchase Item
+    </div>
+    <div class="panel-body">
+
+        <div class="form-inline form-group">
+            <div class="form-group">
+                @Html.Label("Item")&nbsp;&nbsp;
+                @Html.DropDownList("ItemId", ViewBag.ItemId as SelectList, "---Select One---", new { @class = "form-control" })&nbsp;&nbsp;&nbsp;
+
+            </div>
+
+            <div class="form-group">
+
+                @Html.Label("Quantity")&nbsp;&nbsp;
+                @Html.TextBox("Quantity", null, new { @class = "form-control" }) &nbsp; &nbsp;
+
+            </div>
+            <div class="form-group">
+                @Html.Label("Price")&nbsp;&nbsp;
+                @Html.TextBox("ItemPrice", null, new { @class = "form-control",disabled=true })
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Add" id="btnAdd" />&nbsp; &nbsp;&nbsp; &nbsp;
+            </div>
+            <div class="form-group">
+                <div id="ErrorMsgs" class="text-center" style="color:red;font-weight:bold"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@using (Html.BeginForm("Create","Purchases",FormMethod.Post,new {id="form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row ">
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                  Purchase Item List
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-condensed table-responsive table-hover ">
+                        <thead>
+                            <tr>
+                                <td>SL</td>
+                                <td>Item</td>
+                                <td>Price</td>
+                                <td>Quantity</td>
+                                <td>Total</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody id="PurchaseItemList">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div id="bindValue">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Purchase Info
+                </div>
+                <div class="panel-body">
+                    <div id="ErrorForTableRow" class="text-center h4" style="color:red; font-weight:bold"></div>
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+
+                            @Html.LabelFor(model => model.OutletId, "Outlet", htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+
+                                @Html.DropDownList("OutletId", ViewBag.OutletId as SelectList, "---Select Outlet---", htmlAttributes: new { @class = "form-control" })
+                                <div id="ErrorForOutlet" style="color:red"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EmployeeId, "Employee", htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.DropDownList("EmployeeId", ViewBag.EmployeeId as SelectList, "---Select Employee---", htmlAttributes: new { @class = "form-control" })
+                                <div id="ErrorForEmployee" style="color:red"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PurchaseDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.PurchaseDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PurchaseDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PartyId, "Supplier", htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.DropDownList("PartyId", ViewBag.PartyId as SelectList, "---Select Supplier---", htmlAttributes: new { @class = "form-control" })
+                                <div id="ErrorForParty" style="color:red"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control",disabled=true } })
+                                @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AmountDue,"Due", htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.AmountDue, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AmountDue, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" id="btnSubmit" value="Create" class="btn btn-block btn-lg btn-success" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ProjectScript/Purchase/Create_Purchase.js"></script>
+}

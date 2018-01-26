@@ -1,0 +1,101 @@
+﻿@model SuperShopManagementSystem.Models.ViewModel.ExpenseResultVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Expense Result</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div style="text-align:right">
+                                <div class="h4">Extreme BD</div>
+                                Extreme BD Super Shop
+                                <div>Contact No. 01767111351</div>
+                                <div>Sukrabad, Dhaka 1207</div>
+                                <div>Bangladesh</div><br />
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <code class="h2" style="font-family:'Agency FB'">EXPENSE RESULT</code>
+                        </div>
+                        <div class="col-md-12">
+                            <div style="height:2px;background-color:#00ffff"></div>
+                        </div>
+                        <br />
+                        <div class="col-xs-12">
+
+                            <div class="col-xs-6">
+                                <strong>Expense No: </strong> @Html.DisplayFor(model => model.ExpenseNo)<br />
+                                <strong>Expense Date: </strong> @Html.DisplayFor(model => model.Date)<br />
+
+                            </div>
+                            <div class="col-xs-6">
+                                <strong>Outlet: </strong> @Html.DisplayFor(model => model.Outlet)<br />
+                                <strong>Employee: </strong> @Html.DisplayFor(model => model.Employee)<br />
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+
+                        <div class="col-xs-12">
+                            <br />
+                        </div>
+                        <div class="col-xs-12">
+                            <br />
+                            <table class="table table-responsive table-condensed table-striped table-bordered">
+
+                                <thead style="background-color:#99ad18;font-weight:bold">
+                                    <tr>
+                                        <td>SL</td>
+                                        <td>Item Name</td>
+                                        <td>Price</td>
+                                        <td>Quantity</td>
+                                        <td>Total Item Price</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{int count = 0; }
+                                    @if (Model.ExpenseDetails != null)
+                                    {
+                                        foreach (var item in Model.ExpenseDetails)
+                                        {
+                                            <tr>
+                                                @{count++; }
+                                                <td>@count</td>
+                                                <td>@item.ExpenseItem.Name</td>
+                                                <td>@item.Amount</td>
+                                                <td>@item.Quantity</td>
+                                                <td>@item.LineTotal</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class=" col-xs-4 col-md-offset-8 pull-right">
+                                <div style="height:2px;background-color:#00ffff"></div>
+                                <strong>Total Price: </strong> @Html.DisplayFor(model => model.Total)<br />
+                                <strong>Due: </strong> @Html.DisplayFor(model => model.Due)<br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

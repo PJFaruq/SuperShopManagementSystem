@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperShopManagementSystem.BLL;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace SuperShopManagementSystem.Models
     public class Common
     {
         bool status = false;
+        CommonBLL commonBll = new CommonBLL();
 
         //Check Image Format
         internal bool CheckImageFormat(HttpPostedFileBase imageFile)
@@ -37,6 +39,12 @@ namespace SuperShopManagementSystem.Models
             byte[] convertedImage = new byte[ImageFile.ContentLength];
             ImageFile.InputStream.Read(convertedImage, 0, ImageFile.ContentLength);
             return convertedImage;
+        }
+
+        internal int GetItemStock(int id)
+        {
+            int numberOfStock = commonBll.GetItemStock(id);
+            return numberOfStock;
         }
     }
 }
