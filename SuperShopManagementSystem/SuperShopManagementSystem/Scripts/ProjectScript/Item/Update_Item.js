@@ -38,7 +38,7 @@ $(document).ready(function () {
                                 $("#ErrorMsg").text("This Name is Already Exist");
                                 isAvaiable = true;
                             }
-                            
+
                         }
                         else {
                             $("#ErrorMsg").empty();
@@ -46,7 +46,7 @@ $(document).ready(function () {
                         }
                     }
 
-                })
+                });
             }
 
 

@@ -11,7 +11,9 @@ namespace SuperShopManagementSystem.Controllers
     public class ExpenseCategoriesController : Controller
     {
         ExpenseCategoryBLL expenseCategoryBll = new ExpenseCategoryBLL();
+        DropDownBLL dropDownBll = new DropDownBLL();
         bool status = false;
+        Common common = new Common();
 
         //GET: Create Expense Category
         public ActionResult Create()
@@ -50,8 +52,6 @@ namespace SuperShopManagementSystem.Controllers
             return View(expenseCategory);
         }
 
-
-
         //Update Item Category [Get Request]
         public ActionResult Update(int? id)
         {
@@ -67,7 +67,7 @@ namespace SuperShopManagementSystem.Controllers
                 return RedirectToAction("Error", "Home", null);
             }
 
-
+            ViewBag.ParentId = dropDownBll.GetExpenseParentById(id);
             return View(expenseCategory);
         }
 
@@ -78,8 +78,18 @@ namespace SuperShopManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Update(ExpenseCategory ExpenseCategory)
         {
-            status = expenseCategoryBll.Update(ExpenseCategory);
-            return View();
+            if (ModelState.IsValid)
+            {
+                status = expenseCategoryBll.Update(ExpenseCategory);
+                if (status)
+                {
+                    return RedirectToAction("ShowAll");
+                }
+            }
+
+            ViewBag.ParentId = dropDownBll.GetExpenseParentById(ExpenseCategory.Id);
+            return View(ExpenseCategory);
+            
         }
 
 

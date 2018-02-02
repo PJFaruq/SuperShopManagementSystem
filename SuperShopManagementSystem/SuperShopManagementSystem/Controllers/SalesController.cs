@@ -38,7 +38,6 @@ namespace SuperShopManagementSystem.Controllers
                 status = salesBll.Create(sales);
                 if (status == true)
                 {
-                    int id = salesBll.GetLastId();
                     ViewBag.SuccessMsg = "Sales Item Successfully";
                     ModelState.Clear();
                 }

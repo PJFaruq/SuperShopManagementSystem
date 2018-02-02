@@ -1,6 +1,7 @@
 ﻿using SuperShopManagementSystem.Models;
 using SuperShopManagementSystem.Models.DatabaseContex;
 using SuperShopManagementSystem.Models.Operation;
+using SuperShopManagementSystem.Models.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,28 @@ namespace SuperShopManagementSystem.DAL
         {
             db.Saleses.Add(sales);
             return db.SaveChanges() > 0;
+        }
+
+        internal List<Sales> GetSearchResult(SearchVM searchVM)
+        {
+            var listOfSales = db.Saleses.AsQueryable();
+            if (searchVM.Code != null)
+            {
+                listOfSales = listOfSales.Where(m => m.Id == searchVM.Code).AsQueryable();
+            }
+            if (searchVM.OutletId != null)
+            {
+                listOfSales = listOfSales.Where(m => m.OutletId == searchVM.OutletId).AsQueryable();
+            }
+            if (searchVM.FromDate != null)
+            {
+                listOfSales = listOfSales.Where(m => m.SalesDate >= searchVM.FromDate).AsQueryable();
+            }
+            if (searchVM.ToDate != null)
+            {
+                listOfSales = listOfSales.Where(m => m.SalesDate <= searchVM.ToDate).AsQueryable();
+            }
+            return listOfSales.ToList();
         }
 
         internal Sales GetSalesDetail(int? id)

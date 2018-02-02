@@ -74,10 +74,11 @@
                                     @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-9">
                                         <input type="file" name="ImageFile" id="Image" />
+                                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
                                         <br>
                                         <div class="col-md-6">
                                             <div id="imagePreview" style="display:none">
-                                                <div class="thumbnail" >
+                                                <div class="thumbnail">
                                                     <img class="img-responsive" id="TargetImage" />
                                                 </div>
                                             </div>
@@ -86,7 +87,7 @@
                                                 <p id="Imagedescription"></p>
                                             </div>
                                         </div>
-                                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+
                                     </div>
                                 </div>
 

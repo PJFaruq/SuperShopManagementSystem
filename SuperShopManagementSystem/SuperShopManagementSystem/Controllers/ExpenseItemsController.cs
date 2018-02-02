@@ -38,7 +38,7 @@ namespace SuperShopManagementSystem.Controllers
                 if (status == true)
                 {
 
-                    ViewBag.Msg = "ExpenseItem Category Successfully Added";
+                    ViewBag.Msg = "Expense Item Successfully Added";
                     ModelState.Clear();
                     ViewBag.ExpenseCategoryId = dropDown.GetAllExpenseCategory();
                     return View();

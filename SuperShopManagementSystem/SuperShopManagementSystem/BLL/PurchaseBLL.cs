@@ -50,7 +50,7 @@ namespace SuperShopManagementSystem.BLL
             return purchase;
         }
 
-        internal List<Purchase> GetSearchResult(PurchaseSearchVM purchaseSearchVM)
+        internal List<Purchase> GetSearchResult(SearchVM purchaseSearchVM)
         {
             List<Purchase> listOfPurchase = purchaseDal.GetSearchResult(purchaseSearchVM);
             return listOfPurchase;

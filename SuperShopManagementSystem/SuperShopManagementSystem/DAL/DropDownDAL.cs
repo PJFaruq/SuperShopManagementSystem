@@ -58,9 +58,33 @@ namespace SuperShopManagementSystem.DAL
             return new SelectList(db.Organizations.Where(model => model.IsDeleted == false), "Id", "Name");
         }
 
+        internal SelectList GetExpenseParentById(int? id)
+        {
+            ExpenseCategory itemCatgory = db.ExpenseCategories.Find(id);
+            return new SelectList(db.ExpenseCategories.Where(m => m.IsDeleted == false), "Id", "Name", itemCatgory.ParentId);
+        }
+
         internal SelectList GetAllSupplier()
         {
             return new SelectList(db.Parties.Where(model => model.Type == "Supplier" && model.IsDeleted == false),"Id","Name");
+        }
+
+        internal SelectList GetAllEmployeeById(int ?id)
+        {
+            Employee employee=db.Employees.Find(id);
+            return new SelectList(db.Employees.Where(m => m.IsDeleted == false), "Id", "Name",employee.ReferenceId);
+        }
+
+        internal SelectList GetParentParentById(int? id)
+        {
+            ItemCategory itemCatgory = db.ItemCategories.Find(id);
+            return new SelectList(db.ItemCategories.Where(m => m.IsDeleted == false), "Id", "Name", itemCatgory.ParentId);
+        }
+
+        internal SelectList GetAllOutletById(int ?id)
+        {
+            Employee employee = db.Employees.Find(id);
+            return new SelectList(db.Outlets.Where(m => m.IsDeleted == false), "Id", "Name",employee.OutletId );
         }
     }
 }

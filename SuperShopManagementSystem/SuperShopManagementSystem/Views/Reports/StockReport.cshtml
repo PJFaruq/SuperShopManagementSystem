@@ -1,0 +1,104 @@
+﻿@model IEnumerable<SuperShopManagementSystem.Models.ViewModel.StockReportVM>
+
+@{
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IncomeReport</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/ProjectStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="col-md-12">
+                            <div style="text-align:right">
+                                <div class="h4">Extreme BD</div>
+                                Extreme BD Super Shop
+                                <div>Contact No. 01767111351</div>
+                                <div>Sukrabad, Dhaka 1207</div>
+                                <div>Bangladesh</div><br />
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <code class="h2 PdfHeader">INCOME REPORT</code>
+                        </div>
+                        <br />
+                        <div class="col-md-12">
+                            <div style="height:2px;background-color:#00ffff"></div>
+                        </div>
+                        <br />
+                        <div class="col-xs-12">
+                            <table border="1" class="table table-bordered table-condensed table-striped table-responsive tableDesign">
+                                <thead class="theadStyle">
+                                    <tr>
+                                        <th>
+                                            SL
+                                        </th>
+                                        <th>
+                                            Item Name
+                                        </th>
+                                        <th>
+                                            Category Full Path
+                                        </th>
+                                        <th>
+                                            Stock Quantity
+                                        </th>
+                                        <th>
+                                            Average Price
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @if (Model != null)
+    {
+                            <tbody>
+
+                                @foreach (var item in Model)
+    {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SerialNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ItemName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryPath)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StockQuantiy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AvgPrice)
+                                </td>
+                            </tr>
+}
+                            </tbody>
+}
+
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>

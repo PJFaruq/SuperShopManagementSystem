@@ -65,11 +65,34 @@ namespace SuperShopManagementSystem.BLL
             return selectListOfExpenseCategory;
         }
 
+        internal SelectList GetExpenseParentById(int? id)
+        {
+            SelectList selectListOfExpenseParent = dropDownDal.GetExpenseParentById(id);
+            return selectListOfExpenseParent;
+        }
 
         internal SelectList GetAllSupplier()
         {
             SelectList selectListOfSupplier = dropDownDal.GetAllSupplier();
             return selectListOfSupplier;
+        }
+
+        internal SelectList GetAllEmployeeById(int? id)
+        {
+            SelectList selectListOfEmployee = dropDownDal.GetAllEmployeeById(id);
+            return selectListOfEmployee;
+        }
+
+        internal SelectList GetParentParentById(int? id)
+        {
+            SelectList selectListOfParentCategory = dropDownDal.GetParentParentById( id);
+            return selectListOfParentCategory;
+        }
+
+        internal SelectList GetAllOutletById(int? id)
+        {
+            SelectList selectListOfOutlet = dropDownDal.GetAllOutletById(id);
+            return selectListOfOutlet;
         }
     }
 }

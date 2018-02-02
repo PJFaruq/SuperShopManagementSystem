@@ -1,0 +1,121 @@
+﻿@model IEnumerable<SuperShopManagementSystem.Models.Operation.Expense>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ExpenseReport</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/ProjectStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="col-md-12">
+                            <div style="text-align:right">
+                                <div class="h4">Extreme BD</div>
+                                Extreme BD Super Shop
+                                <div>Contact No. 01767111351</div>
+                                <div>Sukrabad, Dhaka 1207</div>
+                                <div>Bangladesh</div><br />
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <code class="h2 PdfHeader">EXPENSE REPORT</code>
+                        </div>
+                        <br />
+                        <div class="col-md-12">
+                            <div style="height:2px;background-color:#00ffff"></div>
+                        </div>
+                        <br />
+                        <div class="col-xs-12">
+                            <table class="tableDesign table table-bordered table-condensed table-striped table-responsive ">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            SL
+                                        </th>
+                                        <th>
+                                            Date
+                                        </th>
+                                        <th>
+                                            Description
+                                        </th>
+                                        <th>
+                                            Outlet
+                                        </th>
+                                        <th>
+                                            Total
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @{ int count = 0; }
+                                @if (Model != null)
+                                {
+
+                                    <tbody>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            { count++; }
+                                            <tr>
+                                                <td>
+                                                    @count
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Date)
+                                                </td>
+                                                <td>
+                                                    <table border="1" style="font-size:10px;" class="tableDesign table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <td>Item</td>
+                                                                <td>Quantity</td>
+                                                                <td>Total Price</td>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var expense in item.ExpenseDetails)
+                                                            {
+                                                                <tr>
+                                                                    <td>@expense.ExpenseItem.Name</td>
+                                                                    <td>@expense.Quantity</td>
+                                                                    <td>@expense.LineTotal</td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Outlet.Name)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Total)
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                }
+
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,5 +1,4 @@
-﻿/// <reference path="../../jquery-1.10.2.min.js" />
-
+﻿/// <reference path="~/Themes/bower_components/jquery/dist/jquery.min.js" />
 
 $(document).ready(function () {
 
@@ -30,7 +29,7 @@ $(document).ready(function () {
 
             $("#ParentCategoryDiv").show();
         }
-    })
+    });
 
 
     //Random Code Generating 

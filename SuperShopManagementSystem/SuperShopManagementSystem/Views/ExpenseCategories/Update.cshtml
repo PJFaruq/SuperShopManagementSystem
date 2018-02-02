@@ -1,0 +1,85 @@
+﻿@model SuperShopManagementSystem.Models.ExpenseCategory
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="text-center">Update Expense Category</h4>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+
+                    <div class="col-md-6 col-md-offset-3">
+                        @using (Html.BeginForm("Update", "ExpenseCategories", FormMethod.Post, new { id = "ExpenseCategoryForm" }))
+                        {
+
+
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                @if (ViewBag.Msg != null)
+                                {
+                                    <div style="border:1px solid #e6dbdb;padding:5px;background-color:#f5f5f5;color:green;font-weight:bold;border-radius:5px" class="text-center col-md-offset-3">@ViewBag.Msg</div>
+                                    <br />
+                                }
+
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group " id="ParentCategoryDiv">
+                                    @Html.LabelFor(model => model.ParentId, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(model => model.ParentId, null, "---No Parent Category---", new { @class = "form-control" })
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                        <div class="text-danger" id="ErrorMsg"></div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" id="btnSubmit" value="Update" class="btn btn-block btn-success btn-lg" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+}

@@ -53,5 +53,6 @@ namespace SuperShopManagementSystem.Models.DatabaseContex
         }
 
         public System.Data.Entity.DbSet<SuperShopManagementSystem.Models.ViewModel.ExpenseResultVM> ExpenseResultVMs { get; set; }
+
     }
 }

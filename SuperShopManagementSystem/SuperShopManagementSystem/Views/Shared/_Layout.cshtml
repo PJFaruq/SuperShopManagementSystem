@@ -197,7 +197,7 @@
                         <img src="~/Themes/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>PJ Faruq</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -215,7 +215,7 @@
                 <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
-                    <li class="treeview">
+                    <li class="treeview active">
                         <a href="#">
                             <i class="fa fa-circle-o text-aqua"></i> <span>Setup Module</span>
                             <span class="pull-right-container">
@@ -271,7 +271,7 @@
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="@Url.Action("Create","ExpenseItems")"><i class="fa fa-circle-o text-red"></i>Add Expense Item</a></li>
-                                    <li><a href="@Url.Action("Create","ItemCategories")"><i class="fa fa-circle-o text-red"></i>List of All Expense Item</a></li>
+                                    <li><a href="@Url.Action("ShowAll","ExpenseItems")"><i class="fa fa-circle-o text-red"></i>List of All Expense Item</a></li>
                                 </ul>
                             </li>
 
@@ -283,8 +283,8 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>Add Organization</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>List of All Organization</a></li>
+                                    <li><a href="@Url.Action("Create","Organizations")"><i class="fa fa-circle-o text-red"></i>Add Organization</a></li>
+                                    <li><a href="@Url.Action("ShowAll","Organizations")"><i class="fa fa-circle-o text-red"></i>List of All Organization</a></li>
                                 </ul>
                             </li>
 
@@ -296,8 +296,8 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>Add Outlet</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>List of All Outlet</a></li>
+                                    <li><a href="@Url.Action("Create","Outlets")"><i class="fa fa-circle-o text-red"></i>Add Outlet</a></li>
+                                    <li><a href="@Url.Action("ShowAll","Outlets")"><i class="fa fa-circle-o text-red"></i>List of All Outlet</a></li>
                                 </ul>
                             </li>
 
@@ -309,8 +309,8 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>Add Party</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>List of All Party</a></li>
+                                    <li><a href="@Url.Action("Create","Parties")"><i class="fa fa-circle-o text-red"></i>Add Party</a></li>
+                                    <li><a href="@Url.Action("ShowAll","Parties")"><i class="fa fa-circle-o text-red"></i>List of All Party</a></li>
                                 </ul>
                             </li>
 
@@ -322,17 +322,17 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>Add Employee</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i>List of All Employee</a></li>
+                                    <li><a href="@Url.Action("Create","Employees")"><i class="fa fa-circle-o text-red"></i>Add Employee</a></li>
+                                    <li><a href="@Url.Action("ShowAll","Employees")"><i class="fa fa-circle-o text-red"></i>List of All Employee</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
 
 
-                    <li class="treeview">
+                    <li class="treeview active">
                         <a href="#">
-                            <i class="fa fa-circle-o text-aqua"></i> <span>Setup Module</span>
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Operation Module</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
@@ -340,38 +340,44 @@
                         <ul class="treeview-menu">
                             <li class="treeview">
                                 <a href="#">
-                                    <i class="fa fa-circle-o text-yellow"></i> Level One
+                                    <i class="fa fa-circle-o text-yellow"></i> Puchase
                                     <span class="pull-right-container">
                                         <i class="fa fa-angle-left pull-right"></i>
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> Level Two</a></li>
+                                    <li><a href="@Url.Action("Create","Purchases")"><i class="fa fa-circle-o text-red"></i>Add Purchase</a></li>
+                                    <li><a href="@Url.Action("ShowAll","Purchases")"><i class="fa fa-circle-o text-red"></i>List of Purchase</a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-circle-o text-yellow"></i> Sales
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="@Url.Action("Create","Sales")"><i class="fa fa-circle-o text-red"></i>Add Sales</a></li>
+                                    <li><a href="@Url.Action("ShowAll","Sales")"><i class="fa fa-circle-o text-red"></i>List of Sales</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
 
 
-                    <li class="treeview">
+                    <li class="treeview active">
                         <a href="#">
-                            <i class="fa fa-circle-o text-aqua"></i> <span>Setup Module</span>
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Report Module</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-circle-o text-yellow"></i> Level One
-                                    <span class="pull-right-container">
-                                        <i class="fa fa-angle-left pull-right"></i>
-                                    </span>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> Level Two</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="@Url.Action("Purchase","Reports")"><i class="fa fa-circle-o text-yellow"></i>  Purchase Report</a></li>
+                            <li><a href="@Url.Action("Sales","Reports")"><i class="fa fa-circle-o text-yellow"></i>  Salse Report</a></li>
+                            <li><a href="@Url.Action("Expense","Reports")"><i class="fa fa-circle-o text-yellow"></i>  Expense Report</a></li>
+                            <li><a href="@Url.Action("Stock","Reports")"><i class="fa fa-circle-o text-yellow"></i>  Stock Report</a></li>
                         </ul>
                     </li>
 

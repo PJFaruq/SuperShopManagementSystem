@@ -5,9 +5,9 @@ using System.Web;
 
 namespace SuperShopManagementSystem.Models.ViewModel
 {
-    public class PurchaseSearchVM
+    public class SearchVM
     {
-        public int? PurchaseCode { get; set; }
+        public int? Code { get; set; }
         public int? OutletId { get; set; }
         public DateTime? FromDate { get; set; }
         public DateTime? ToDate { get; set; }

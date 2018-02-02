@@ -159,6 +159,7 @@
     <Compile Include="BLL\ExpenseBLL.cs" />
     <Compile Include="BLL\ExpenseCategoryBLL.cs" />
     <Compile Include="BLL\ExpenseItemBLL.cs" />
+    <Compile Include="BLL\ReportBLL.cs" />
     <Compile Include="BLL\ItemBLL.cs" />
     <Compile Include="BLL\ItemCategoryBLL.cs" />
     <Compile Include="BLL\OrganizationBLL.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="Controllers\OutletsController.cs" />
     <Compile Include="Controllers\PartiesController.cs" />
     <Compile Include="Controllers\PurchasesController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="DAL\CommonDAL.cs" />
     <Compile Include="DAL\DropDownDAL.cs" />
@@ -190,6 +192,7 @@
     <Compile Include="DAL\OutletDAL.cs" />
     <Compile Include="DAL\PartyDAL.cs" />
     <Compile Include="DAL\PurchaseDAL.cs" />
+    <Compile Include="DAL\ReportDAL.cs" />
     <Compile Include="DAL\SalesDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -258,6 +261,14 @@
     <Compile Include="Migrations\201801241910427_Expense_And_ExpenseDetail_Relation_Added.Designer.cs">
       <DependentUpon>201801241910427_Expense_And_ExpenseDetail_Relation_Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801281917459_ShortDateFormat_Add_And_VM_Table_Deleted.cs" />
+    <Compile Include="Migrations\201801281917459_ShortDateFormat_Add_And_VM_Table_Deleted.Designer.cs">
+      <DependentUpon>201801281917459_ShortDateFormat_Add_And_VM_Table_Deleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802010836101_Employee_Multiline_Text_Annotation_Added.cs" />
+    <Compile Include="Migrations\201802010836101_Employee_Multiline_Text_Annotation_Added.Designer.cs">
+      <DependentUpon>201802010836101_Employee_Multiline_Text_Annotation_Added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\DatabaseContex\SuperShopDbContext.cs" />
@@ -278,8 +289,10 @@
     <Compile Include="Models\Party.cs" />
     <Compile Include="Models\ViewModel\ExpenseResultVM.cs" />
     <Compile Include="Models\ViewModel\PurchaseResultVM.cs" />
-    <Compile Include="Models\ViewModel\PurchaseSearchVM.cs" />
+    <Compile Include="Models\ViewModel\IncomeReportVM.cs" />
+    <Compile Include="Models\ViewModel\SearchVM.cs" />
     <Compile Include="Models\ViewModel\SalesReceipt_ViewModel.cs" />
+    <Compile Include="Models\ViewModel\StockReportVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +308,10 @@
     <Content Include="Content\themes\base\datepicker.css" />
     <Content Include="Content\themes\base\dialog.css" />
     <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\blu1.jpg" />
+    <Content Include="Content\themes\base\images\blue-blur.jpg" />
+    <Content Include="Content\themes\base\images\blur2.jpg" />
+    <Content Include="Content\themes\base\images\images.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -353,6 +370,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ProjectScript\Employee\Create_Employee.js" />
+    <Content Include="Scripts\ProjectScript\Employee\ShowAll_Employee.js" />
+    <Content Include="Scripts\ProjectScript\Employee\Update_Employee.js" />
     <Content Include="Scripts\ProjectScript\ExpenseCategory\Create_ExpenseCategory.js" />
     <Content Include="Scripts\ProjectScript\ExpenseItem\Create_ExpenseItem.js" />
     <Content Include="Scripts\ProjectScript\ExpenseItem\ShowAll_ExpenseItem.js" />
@@ -7708,6 +7728,20 @@
     <Content Include="Views\Expenses\ShowAll.cshtml" />
     <Content Include="Views\Purchases\PurchaseReport.cshtml" />
     <Content Include="Views\Purchases\PurchaseReport_Partial.cshtml" />
+    <Content Include="Views\Reports\Income.cshtml" />
+    <Content Include="Views\Reports\IncomeReport.cshtml" />
+    <Content Include="Views\Reports\Stock.cshtml" />
+    <Content Include="Views\Reports\StockReport.cshtml" />
+    <Content Include="Views\Reports\Sales.cshtml" />
+    <Content Include="Views\Reports\SalesReport.cshtml" />
+    <Content Include="Views\Reports\Expense.cshtml" />
+    <Content Include="Views\Reports\ExpenseReport.cshtml" />
+    <Content Include="Views\Reports\Purchase.cshtml" />
+    <Content Include="Views\Reports\PurchaseReport.cshtml" />
+    <Content Include="Views\Employees\Update.cshtml" />
+    <Content Include="Views\Employees\ShowAll.cshtml" />
+    <Content Include="Views\Employees\Details_Partial.cshtml" />
+    <Content Include="Views\ExpenseCategories\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7775,6 +7809,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801241910427_Expense_And_ExpenseDetail_Relation_Added.resx">
       <DependentUpon>201801241910427_Expense_And_ExpenseDetail_Relation_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801281917459_ShortDateFormat_Add_And_VM_Table_Deleted.resx">
+      <DependentUpon>201801281917459_ShortDateFormat_Add_And_VM_Table_Deleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802010836101_Employee_Multiline_Text_Annotation_Added.resx">
+      <DependentUpon>201802010836101_Employee_Multiline_Text_Annotation_Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

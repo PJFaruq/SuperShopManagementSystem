@@ -60,6 +60,8 @@ namespace SuperShopManagementSystem.Controllers
 
                     ViewBag.Msg = "Employee Successfully Added";
                     ModelState.Clear();
+                    ViewBag.ReferenceId = dropDown.GetAllEmployee();
+                    ViewBag.OutletId = dropDown.GetAllOutlet();
                     return View();
                 }
                 if (status == false)
@@ -69,6 +71,8 @@ namespace SuperShopManagementSystem.Controllers
                 }
 
             }
+            ViewBag.ReferenceId = dropDown.GetAllEmployee();
+            ViewBag.OutletId = dropDown.GetAllOutlet();
             return View(employee);
         }
 
@@ -88,7 +92,8 @@ namespace SuperShopManagementSystem.Controllers
             {
                 return RedirectToAction("Error", "Home", null);
             }
-
+            ViewBag.ReferenceId = dropDown.GetAllEmployeeById(id);
+            ViewBag.OutletId = dropDown.GetAllOutletById(id);
             return View(employee);
         }
 
@@ -136,10 +141,10 @@ namespace SuperShopManagementSystem.Controllers
                 }
 
             }
+            ViewBag.ReferenceId = dropDown.GetAllEmployee();
+            ViewBag.OutletId = dropDown.GetAllOutlet();
             return View(employee);
         }
-
-
 
 
         [HttpPost]
@@ -190,10 +195,10 @@ namespace SuperShopManagementSystem.Controllers
             }
 
 
-            //Checking Employee Name Availability
-            public JsonResult CheckEmployeeName(string employeeEmail)
+            //Checking Employee Email Availability
+            public JsonResult CheckEmployeeEmail(string email)
             {
-                status = employeeBll.CheckEmployeeEmail(employeeEmail);
+                status = employeeBll.CheckEmployeeEmail(email);
                 if (status == true)
                 {
                     return Json(1);

@@ -1,0 +1,149 @@
+﻿@model SuperShopManagementSystem.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<div class="row ">
+    <div class="col-md-12">
+        <div class="col-md-6 col-md-offset-3">
+            @{
+            string imageBase64 = Convert.ToBase64String(Model.Image);
+            string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+            }
+            <img src="@imageSrc" width="400" height="350" class="Thumbnail" />
+        </div>
+    </div>
+    <div class="col-md-12">
+        <hr />
+        <div class="col-md-6 col-md-offset-3">
+            <div class="h2">
+                Official Information
+            </div>
+        </div>
+        <hr />
+        <div class="col-md-6 col-md-offset-3">
+            <dl class="dl-horizontal" style="font-size:20px;">
+                <dt>
+                    Outlet Name
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Outlet.Name)
+                </dd>
+
+                <dt>
+                    Reference Name
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Reference.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Code)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Code)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.JoiningDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.JoiningDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ContactNo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ContactNo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="h2">
+                Personal Information
+            </div>
+        </div>
+        <hr />
+        <div class="col-md-6 col-md-offset-3">
+            <dl class="dl-horizontal" style="font-size:20px;">
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmergencyContactNo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EmergencyContactNo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NID)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NID)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FatherName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FatherName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MotherName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MotherName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PresentAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PresentAddress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PermanentAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PermanentAddress)
+                </dd>
+
+            </dl>
+        </div>
+
+    </div>
+</div>
+
+

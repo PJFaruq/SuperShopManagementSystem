@@ -100,20 +100,5 @@ namespace SuperShopManagementSystem.Controllers
             return new Rotativa.ActionAsPdf("PurchaseResult", new { id = id });
         }
 
-        public ActionResult PurchaseReport()
-        {
-            ViewBag.OutletId = dropdown.GetAllOutlet();
-            return View();
-        }
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult PurchaseReport(PurchaseSearchVM purchaseSearchVM)
-        {
-            List<Purchase> listOfPurchase = purchaseBll.GetSearchResult(purchaseSearchVM);
-            ViewBag.OutletId = dropdown.GetAllOutlet();
-            return View(listOfPurchase);
-        }
     }
 }

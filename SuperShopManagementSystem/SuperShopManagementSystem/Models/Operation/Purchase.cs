@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace SuperShopManagementSystem.Models.Operation
 
         [Required]
         [Display(Name ="Purchase Date")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime PurchaseDate { get; set; }
 
         [Required]

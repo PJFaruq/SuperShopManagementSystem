@@ -19,6 +19,7 @@ namespace SuperShopManagementSystem.Models.Operation
 
         [Required]
         [Display(Name = "Sales Date")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime SalesDate { get; set; }
 
         [Required(ErrorMessage ="Please Enter Customer Name")]

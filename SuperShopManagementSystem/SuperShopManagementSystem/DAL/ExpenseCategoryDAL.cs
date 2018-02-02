@@ -28,7 +28,9 @@ namespace SuperShopManagementSystem.DAL
 
         internal bool Update(ExpenseCategory expenseCategory)
         {
-            return status;
+            db.ExpenseCategories.Attach(expenseCategory);
+            db.Entry(expenseCategory).State = System.Data.Entity.EntityState.Modified;
+            return db.SaveChanges() > 0;
         }
 
         internal bool Delete(int id)

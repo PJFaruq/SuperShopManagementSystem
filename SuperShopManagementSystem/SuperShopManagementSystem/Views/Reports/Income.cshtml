@@ -1,0 +1,261 @@
+﻿@model SuperShopManagementSystem.Models.ViewModel.IncomeReportVM
+
+@{
+    ViewBag.Title = "Income";
+}
+
+@using (Html.BeginForm("Income", "Reports", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="h4">Income  Report</div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.Label("Outlet", new { @class = "control-label col-md-3" })
+                                <div class="col-md-9">
+
+                                    @Html.DropDownList("OutletId", ViewBag.OutletId as SelectList, "---Select Outlet---", htmlAttributes: new { @class = "form-control" })
+                                    <div id="ErrorForOutlet" style="color:red"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.Label("FromDate", new { @class = "control-label col-md-3" })
+                                <div class="col-md-9">
+
+                                    @Html.TextBox("FromDate", null, new { @class = "form-control" })
+                                    <div id="ErrorForOutlet" style="color:red"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.Label("ToDate", new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+
+                                @Html.TextBox("ToDate", null, new { @class = "form-control" })
+                                <div id="ErrorForOutlet" style="color:red"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-8">
+                        <input type="submit" value="Search" class="btn btn-success btn-lg btn-block" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="col-md-12">
+    @if (Model != null)
+    {
+        <div class="form-group">
+            @Html.ActionLink("Download Pdf", "IncomeReportPdf", null, new { @class = "btn btn-success",target="_blank" })
+        </div>
+    }
+
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="h4">Purchase Report</div>
+            </div>
+            <div class="panel-body">
+                <table class="tableDesign table table-bordered table-condensed table-striped table-responsive ">
+                    <thead>
+                        <tr>
+                            <th>
+                                SL
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                Amount
+                            </th>
+                        </tr>
+                    </thead>
+                    @if (Model != null)
+                    {
+                        <tbody>
+                            @{int count = 0; }
+                            @foreach (var item in @Model.Purchase)
+                            {
+                                { count++; }
+                                <tr>
+                                    <td>
+                                        @count
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PurchaseDate)
+                                    </td>
+                                    <td>
+                                        <table border="1" style="font-size:10px;" class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <td>Item</td>
+                                                    <td>Quantity</td>
+                                                    <td>Price</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var purchase in item.PurchaseDetails)
+                                                {
+                                                    <tr>
+                                                        <td>@purchase.Item.Name</td>
+                                                        <td>@purchase.Quantity</td>
+                                                        <td>@purchase.Total</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Total)
+                                    </td>
+
+                                </tr>
+
+
+                            }
+                        </tbody>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="h4">Sales Report</div>
+
+            </div>
+            <div class="panel-body">
+                <table class="tableDesign table table-bordered table-condensed table-striped table-responsive ">
+                    <thead>
+                        <tr>
+                            <th>
+                                SL
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                Amount
+                            </th>
+                        </tr>
+                    </thead>
+                    @if (Model != null)
+                    {
+                        <tbody>
+                            @{int count = 0; }
+                            @foreach (var item in @Model.Sales)
+                            {
+                                { count++; }
+                                <tr>
+                                    <td>
+                                        @count
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SalesDate)
+                                    </td>
+                                    <td>
+                                        <table border="1" style="font-size:10px;" class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <td>Item</td>
+                                                    <td>Quantity</td>
+                                                    <td>Price</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var purchase in item.SalesDetails)
+                                                {
+                                                    <tr>
+                                                        <td>@purchase.Item.Name</td>
+                                                        <td>@purchase.Quantity</td>
+                                                        <td>@purchase.Total</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Total)
+                                    </td>
+
+                                </tr>
+
+
+                            }
+                        </tbody>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="h4">Summary</div>
+        </div>
+        <div class="panel-body">
+            <table class="tableDesign table table-bordered table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <td>Total Purchase</td>
+                        <td>Total Sales</td>
+                        <td>Total Profit</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        @if (Model != null)
+                        {
+                            <td>@Model.TotalPurchase</td>
+                            <td>@Model.TotalSales</td>
+                            <td>@Model.TotalProfit</td>
+                        }
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script type="text/javascript">
+        $("#FromDate").datepicker();
+        $("#ToDate").datepicker();
+    </script>
+
+}
+

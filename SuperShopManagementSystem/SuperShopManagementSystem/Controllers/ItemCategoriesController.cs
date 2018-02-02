@@ -13,7 +13,9 @@ namespace SuperShopManagementSystem.Controllers
     public class ItemCategoriesController : Controller
     {
         ItemCategoryBLL itemCategoryBll = new ItemCategoryBLL();
+        DropDownBLL dropDownBll = new DropDownBLL(); 
         bool status = false;
+        Common common = new Common();
 
         // Create Item Category [Get Request]
         public ActionResult Create()
@@ -80,7 +82,7 @@ namespace SuperShopManagementSystem.Controllers
                 return RedirectToAction("Error", "Home", null);
             }
 
-
+            ViewBag.ParentId = dropDownBll.GetParentParentById(id);
             return View(itemCategory);
         }
 
@@ -89,9 +91,38 @@ namespace SuperShopManagementSystem.Controllers
         //Update Item Category [Post Request]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update(ItemCategory itemCategory)
+        public ActionResult Update(ItemCategory itemCategory, HttpPostedFileBase ImageFile, byte[] CurrentImage)
         {
-            status = itemCategoryBll.Update(itemCategory);
+            if (ImageFile == null)
+            {
+
+                itemCategory.Image = CurrentImage;
+            }
+
+            if (ImageFile != null)
+            {
+                bool isValidFormat = common.CheckImageFormat(ImageFile);
+                if (isValidFormat == false)
+                {
+                    itemCategory.Image = CurrentImage;
+                    ModelState.AddModelError("Image", "Only jpg , png , jpeg are allowed");
+                }
+                else
+                {
+                    itemCategory.Image = common.ConvertImage(ImageFile);
+                }
+
+            }
+            if (ModelState.IsValid)
+            {
+                status = itemCategoryBll.Update(itemCategory);
+                if (status == true)
+                {
+                    return RedirectToAction("ShowAll");
+                }
+            }
+
+            ViewBag.ParentId = dropDownBll.GetParentParentById(itemCategory.Id);
             return View();
         }
 

@@ -20,6 +20,7 @@ namespace SuperShopManagementSystem.Models
 
         [Required(ErrorMessage ="Joining Date is Required")]
         [Display(Name="Joining Date")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime JoiningDate { get; set; }
 
 
@@ -33,7 +34,7 @@ namespace SuperShopManagementSystem.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Display(Name = "Emergency Contact No.")]
+        [Display(Name = "Emergency")]
         public string EmergencyContactNo { get; set; }
 
         [Display(Name = "National Id")]
@@ -46,9 +47,11 @@ namespace SuperShopManagementSystem.Models
         public string MotherName { get; set; }
 
         [Display(Name = "Present Address")]
+        [DataType(DataType.MultilineText)]
         public string PresentAddress { get; set; }
 
         [Display(Name = "Permanent Address")]
+        [DataType(DataType.MultilineText)]
         public string PermanentAddress { get; set; }
 
         [Required]

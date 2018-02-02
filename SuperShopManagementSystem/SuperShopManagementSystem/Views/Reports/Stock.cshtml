@@ -1,0 +1,96 @@
+﻿@model IEnumerable<SuperShopManagementSystem.Models.ViewModel.StockReportVM>
+@{
+    ViewBag.Title = "Stock";
+}
+
+<div class="col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="h4">Stock Report</div>
+
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Stock", "Reports", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                @Html.DropDownList("OutletId", ViewBag.OutletId as SelectList, "---Select Outlet---", htmlAttributes: new { @class = "form-control" })
+                            </div>
+                            <div>
+                                <input type="submit" value="Search" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (Model != null)
+            {
+                if (Model.Count() > 0)
+                {
+                    @Html.ActionLink("Download Pdf", "StockReportPdf", null, new { @class = "btn btn-success", target = "_blank" })
+                }
+            }
+
+
+            <hr />
+            <table border="1" class="table table-bordered table-condensed table-striped table-responsive tableDesign">
+                <thead>
+                    <tr>
+                        <th>
+                            SL
+                        </th>
+                        <th>
+                            Item Name
+                        </th>
+                        <th>
+                            Category Full Path
+                        </th>
+                        <th>
+                            Stock Quantity
+                        </th>
+                        <th>
+                            Average Price
+                        </th>
+                    </tr>
+                </thead>
+                @if (Model != null)
+                {
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SerialNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ItemName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryPath)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StockQuantiy)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AvgPrice)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script type="text/javascript">
+    </script>
+
+}
+

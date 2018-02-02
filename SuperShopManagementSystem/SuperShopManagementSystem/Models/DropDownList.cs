@@ -69,5 +69,18 @@ namespace SuperShopManagementSystem.Models
             SelectList selectlistOfSupplier = dropDownbll.GetAllSupplier();
             return selectlistOfSupplier;
         }
+
+        internal SelectList GetAllEmployeeById(int? id)
+
+        {
+            SelectList selectListOfEmployee = dropDownbll.GetAllEmployeeById( id);
+            return selectListOfEmployee;
+        }
+
+        internal SelectList GetAllOutletById(int? id)
+        {
+            SelectList selectListOfOutlet = dropDownbll.GetAllOutletById( id);
+            return selectListOfOutlet;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using SuperShopManagementSystem.Models.Operation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -12,7 +13,7 @@ namespace SuperShopManagementSystem.Models.ViewModel
 
         public int SalesNo { get; set; }
         public string SalesDate { get; set; }
-
+         
         public string Outlet { get; set; }
 
         public string SoldBy { get; set; }
@@ -25,6 +26,7 @@ namespace SuperShopManagementSystem.Models.ViewModel
         public double VAT { get; set; }
         public double Discount { get; set; }
 
+        [NotMapped]
         public List<SalesDetail> SalesDetails { get; set; }
     }
 }

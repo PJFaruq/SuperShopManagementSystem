@@ -39,12 +39,12 @@ namespace SuperShopManagementSystem.DAL
             return purchase;
         }
 
-        internal List<Purchase> GetSearchResult(PurchaseSearchVM purchaseSearchVM)
+        internal List<Purchase> GetSearchResult(SearchVM purchaseSearchVM)
         {
             var listOfPurchase = db.Purchases.AsQueryable();
-            if (purchaseSearchVM.PurchaseCode!=null)
+            if (purchaseSearchVM.Code!=null)
             {
-                listOfPurchase = listOfPurchase.Where(m => m.Id == purchaseSearchVM.PurchaseCode).AsQueryable();
+                listOfPurchase = listOfPurchase.Where(m => m.Id == purchaseSearchVM.Code).AsQueryable();
             }
             if (purchaseSearchVM.OutletId != null)
             {

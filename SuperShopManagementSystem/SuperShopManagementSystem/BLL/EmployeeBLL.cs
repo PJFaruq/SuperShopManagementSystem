@@ -52,7 +52,7 @@ namespace SuperShopManagementSystem.BLL
             int code1 = randomCode.Next(100, 1000);
             int code2 = randomCode.Next(10000000, 100000000);
 
-            generatedCode = "P" + code1.ToString() + "-" + code2.ToString();
+            generatedCode = "C" + code1.ToString() + "-" + code2.ToString();
 
             List<Employee> listOfEmployeeCode = employeeDal.GetAllCode();
             if (listOfEmployeeCode != null)
